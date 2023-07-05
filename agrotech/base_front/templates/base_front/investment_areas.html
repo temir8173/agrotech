@@ -1,0 +1,26 @@
+{% extends 'base_front/layout.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+
+<section id="investment-areas" class="blog-listing section-padding mt-5">
+    <div class="container">
+        <div class="row">
+            <h4>{% trans "investment_areas_h" %}</h4>
+        </div>
+        <div class="row align-items-start">
+            {% for investment in investments %}
+            <div class="col-lg-4 m-15px-tb">
+                <div class="investment-box">
+                    <p class="inv-box-header">{{ investment.name }}</p>
+                    <span class="inv-box-text">{{ investment.description|safe }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

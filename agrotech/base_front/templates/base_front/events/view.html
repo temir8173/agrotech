@@ -1,0 +1,29 @@
+{% extends 'base_front/layout.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+
+<section class="section-padding mt-5 event_section">
+    <div class="container">
+        <div class="row">
+            <div class="title_p">
+                <h4>{{event_obj.title}}</h4>
+                <span class="event_date">{{event_obj.publication_date}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="event_img_box">
+                <img src="{{ event_obj.image.url }}" alt="" width="200">
+            </div>
+            <span>
+                {% autoescape off %}
+                    {{ event_obj.content }}
+                {% endautoescape %}
+            </span>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

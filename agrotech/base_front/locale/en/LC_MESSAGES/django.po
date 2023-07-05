@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-03 05:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: base_front/context_processors.py:6
+msgid "menu_events"
+msgstr "Events"
+
+#: base_front/context_processors.py:7
+msgid "menu_services"
+msgstr "Services"
+
+#: base_front/context_processors.py:8
+msgid "menu_projects"
+msgstr "Projects"
+
+#: base_front/context_processors.py:9
+msgid "menu_partners"
+msgstr "Partners"
+
+#: base_front/context_processors.py:10
+msgid "menu_technologies"
+msgstr "Technologies"
+
+#: base_front/context_processors.py:11
+msgid "menu_farmer_training"
+msgstr "Farmer training"
+
+#: base_front/templates/base_front/_about.html:6
+msgid "about_h"
+msgstr "About us"
+
+#: base_front/templates/base_front/_about.html:10
+msgid "about_p_1"
+msgstr ""
+
+#: base_front/templates/base_front/_about.html:11
+msgid "about_p_2"
+msgstr ""
+
+#: base_front/templates/base_front/_about.html:12
+msgid "about_p_3"
+msgstr ""
+
+#: base_front/templates/base_front/events/list.html:11
+msgid "events_title"
+msgstr "Events"
+
+#: base_front/templates/base_front/events/list.html:20
+#: base_front/templates/base_front/index.html:55
+msgid "F"
+msgstr ""
+
+#: base_front/templates/base_front/events/list.html:22
+#: base_front/templates/base_front/index.html:57
+msgid "Y"
+msgstr ""
+
+#: base_front/templates/base_front/events/list.html:38
+#: base_front/templates/base_front/index.html:73
+msgid "last_events_more_btn"
+msgstr "More"
+
+#: base_front/templates/base_front/index.html:43
+msgid "last_events_title"
+msgstr "Last events"
+
+#: base_front/templates/base_front/investment_areas.html:11
+msgid "investment_areas_h"
+msgstr "Investment areas"
+
+#: base_front/templates/base_front/projects.html:11
+msgid "agro_project_h"
+msgstr "Projects"

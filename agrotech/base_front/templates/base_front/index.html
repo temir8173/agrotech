@@ -1,0 +1,178 @@
+{% extends 'base_front/layout.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+
+<!-- ***** Main Banner Area Start ***** -->
+<section class="section main-banner" id="top" data-section="section1">
+    <video autoplay muted loop id="bg-video">
+        <source src="{% static 'base_front/assets/images/harvest.mp4' %}" type="video/mp4" />
+    </video>
+
+    <div class="video-overlay header-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="caption">
+                        <div class="hex-menu">
+                            {% include 'base_front/_hex_menu.html' %}
+                        </div>
+                        {% if 0 %}
+                            <h6>Hello Students</h6>
+                            <h2>Welcome to Education</h2>
+                            <p>This is an edu meeting HTML CSS template provided by <a rel="nofollow" href="https://templatemo.com/page/1" target="_blank">TemplateMo website</a>. This is a Bootstrap v5.1.3 layout. The video background is taken from Pexels website, a group of young people by <a rel="nofollow" href="https://www.pexels.com/@pressmaster" target="_blank">Pressmaster</a>.</p>
+                            <div class="main-button-red">
+                                <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Main Banner Area End ***** -->
+
+{% include 'base_front/_about.html' %}
+
+<section id="events" class="blog-listing gray-bg section-padding">
+    <div class="container">
+        <div class="row">
+            <h4>{% trans "last_events_title" %}</h4>
+        </div>
+        <div class="row align-items-start">
+            <div class="col-lg-12 m-15px-tb">
+                <div class="row">
+
+                    {% for event in last_events %}
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="blog-grid">
+                            <div class="blog-img">
+                                <div class="date">
+                                    <span>{{ event.publication_date|date:"d" }}</span>
+                                    <label>{{ event.publication_date|date:_("F") }}</label>
+                                    {% if event.publication_date.year != current_year %}
+                                        <span class="year">{{ event.publication_date|date:_("Y") }}</span>
+                                    {% endif %}
+                                </div>
+                                <a href="{% url 'event_view' event.id %}">
+                                    <div class="img-box">
+                                        <div>
+                                            <img src="{{ event.image.url }}" title="" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <h5><a href="{% url 'event_view' event.id %}">{{ event.title }}</a></h5>
+                                <p>{{ event.content|striptags|slice:":100" }}...</p>
+                                <div class="btn-bar">
+                                    <a href="{% url 'event_view' event.id %}" class="px-btn-arrow">
+                                        <span>{% trans "last_events_more_btn" %}</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="blog-grid">
+                            <div class="blog-img">
+                                <div class="date">
+                                    <span>{{ event.publication_date|date:"d" }}</span>
+                                    <label>{{ event.publication_date|date:_("F") }}</label>
+                                    {% if event.publication_date.year != current_year %}
+                                        <span class="year">{{ event.publication_date|date:_("Y") }}</span>
+                                    {% endif %}
+                                </div>
+                                <a href="{% url 'event_view' event.id %}">
+                                    <div class="img-box">
+                                        <div>
+                                            <img src="{{ event.image.url }}" title="" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <h5><a href="{% url 'event_view' event.id %}">{{ event.title }}</a></h5>
+                                <p>{{ event.content|striptags|slice:":100" }}...</p>
+                                <div class="btn-bar">
+                                    <a href="{% url 'event_view' event.id %}" class="px-btn-arrow">
+                                        <span>{% trans "last_events_more_btn" %}</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="blog-grid">
+                            <div class="blog-img">
+                                <div class="date">
+                                    <span>{{ event.publication_date|date:"d" }}</span>
+                                    <label>{{ event.publication_date|date:_("F") }}</label>
+                                    {% if event.publication_date.year != current_year %}
+                                        <span class="year">{{ event.publication_date|date:_("Y") }}</span>
+                                    {% endif %}
+                                </div>
+                                <a href="{% url 'event_view' event.id %}">
+                                    <div class="img-box">
+                                        <div>
+                                            <img src="{{ event.image.url }}" title="" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <h5><a href="{% url 'event_view' event.id %}">{{ event.title }}</a></h5>
+                                <p>{{ event.content|striptags|slice:":100" }}...</p>
+                                <div class="btn-bar">
+                                    <a href="{% url 'event_view' event.id %}" class="px-btn-arrow">
+                                        <span>{% trans "last_events_more_btn" %}</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="blog-grid">
+                            <div class="blog-img">
+                                <div class="date">
+                                    <span>{{ event.publication_date|date:"d" }}</span>
+                                    <label>{{ event.publication_date|date:_("F") }}</label>
+                                    {% if event.publication_date.year != current_year %}
+                                        <span class="year">{{ event.publication_date|date:_("Y") }}</span>
+                                    {% endif %}
+                                </div>
+                                <a href="{% url 'event_view' event.id %}">
+                                    <div class="img-box">
+                                        <div>
+                                            <img src="{{ event.image.url }}" title="" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <h5><a href="{% url 'event_view' event.id %}">{{ event.title }}</a></h5>
+                                <p>{{ event.content|striptags|slice:":100" }}...</p>
+                                <div class="btn-bar">
+                                    <a href="{% url 'event_view' event.id %}" class="px-btn-arrow">
+                                        <span>{% trans "last_events_more_btn" %}</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

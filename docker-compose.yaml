@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+#  shop:
+#    build:
+#      context: .
+#      dockerfile: ./docker-build/Dockerfile
+#    environment:
+#      CONFIG: ProductionConfig
+#      SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://username:passwd!@pg:5432/blog
+#    ports:
+#      - "8080:80"
+#    depends_on:
+#      pg:
+#        condition: service_healthy
+
+  pg:
+    image: postgres
+    container_name: pg
+    environment:
+      POSTGRES_DB: agrotech
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: passwd!
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data/pgdata
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 4s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db-data:

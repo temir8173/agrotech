@@ -1,0 +1,54 @@
+{% load i18n %}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  {% for id, category in categories.items %}
+    <li class="nav-item service-tag" role="presentation">
+      <button class="nav-link {% if forloop.first %} active {% endif %}"
+              id="service-cat-{{id}}-tab" data-bs-toggle="tab" data-bs-target="#service-cat-{{id}}" type="button" role="tab" aria-controls="home" aria-selected="false">
+
+        {{category.name}}
+      </button>
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="tab-content">
+
+  {% for id, categories in categories.items %}
+    <div class="services-tab tab-pane {% if forloop.first %} active {% endif %}"
+         id="service-cat-{{id}}" role="tabpanel" aria-labelledby="service-cat-{{id}}-tab">
+      <table class="table table-striped table-bordered mt-5">
+        <thead>
+          <tr>
+            <th scope="col">{% trans "service_table_name" %}</th>
+            <th scope="col">{% trans "service_table_price" %}</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for category_id, services in services_by_category.items %}
+          {% if category_id == id %}
+              {% for service in services %}
+                <tr>
+                  <td>{{ service.name }}</td>
+                  <td>{{ service.price }}<br>{{ service.description }}</td>
+                  <td>
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=77078758173&text={{ service.name }}">
+                    Whatsapp</a>
+                  </td>
+                </tr>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+  var firstTabEl = document.querySelector('#myTab li:last-child a')
+  var firstTab = new bootstrap.Tab(firstTabEl)
+
+  firstTab.show()
+</script>

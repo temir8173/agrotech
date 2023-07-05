@@ -1,0 +1,75 @@
+{% load static %}
+{% load i18n %}
+
+<!-- Sub Header -->
+<div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-sm-6">
+          <div class="left-content">
+            <p><em></em>Проект AgriTechHub</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-6 d-flex flex-row-reverse">
+            {% get_current_language as current_language %}
+            {% get_available_languages as available_languages %}
+            <ul class="dropdown language-switcher d-flex align-items-center">
+                {% for code, label in available_languages %}
+                    {% if code == current_language %}
+                        <li class="active ">{{ label }}</li>
+                    {% endif %}
+                {% endfor %}
+                <li class="dropdown-content ">
+                    {% for code, label in available_languages %}
+                        {% if code != current_language %}
+                            <a href="{% url 'change_language' code %}">{{ label }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </li>
+            </ul>
+          <div class="right-icons">
+            <ul>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky {% if current_path == '/' %}main-page{% endif %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="/" class="logo">
+                        <img src="{% static 'base_front/assets/images/agro-transp-bg.png' %}" alt="logo">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        {% for url, menu_option in menu_options.items %}
+                        <li class="{% if current_path == url %}current {% endif %}">
+                            <a href="{{url}}">{{menu_option}}</a>
+                        </li>
+                        {% endfor %}
+                        {% if 0 %}
+                            <li class="has-sub">
+                                <a href="javascript:void(0)">Өзекті</a>
+                                <ul class="sub-menu">
+                                    <li><a href="meetings.html">Құрм</a></li>
+                                    <li><a href="meeting-details.html">Meeting Details</a></li>
+                                </ul>
+                            </li>
+                        <li class="scroll-to-section active_item"><a href="#courses">Обучение фермеров</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->

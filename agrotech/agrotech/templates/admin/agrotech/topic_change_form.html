@@ -1,0 +1,18 @@
+{% extends "admin/change_form.html" %}
+
+{% block content %}
+    <div>
+        <h2>Custom HTML Section</h2>
+        <p>This is a custom HTML element added to the form.</p>
+        <!-- Add your custom HTML elements here -->
+    </div>
+    <div class="form-row field-field_to_disable">
+        <div>
+            <label>{{ field.field.base_id }}</label>
+            <div>
+                {{ field.value }}
+            </div>
+        </div>
+    </div>
+    {{ block.super }}
+{% endblock %}

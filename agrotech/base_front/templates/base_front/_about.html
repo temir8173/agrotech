@@ -1,0 +1,106 @@
+{% load i18n %}
+
+<section id="about" class="blog-listing section-padding">
+    <div class="container">
+        <div class="row">
+            <h4>{% trans "about_h" %}</h4>
+        </div>
+        <div class="row align-items-start">
+            <div class="col-lg-12 m-15px-tb">
+                <p>{% trans "about_p_1" %}</p>
+                <p>{% trans "about_p_2" %}</p>
+                <p>{% trans "about_p_3" %}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="animate fadeInUp" data-anim-type="fadeInUp">
+                    <div class="icon_box icon_position_top no_border">
+                        <div class="image_wrapper">
+                            <img src="https://agritechhub.pl/wp-content/uploads/2016/04/icon3.jpg" class="scale-with-grid" alt="" width="" height="">
+                        </div>
+                        <div class="desc_wrapper">
+                            <h4>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">У нас есть знания об ИКТ </font>
+                                </font><br>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">и инвестировании</font>
+                                </font>
+                            </h4>
+                            <div class="desc">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Мы команда опытных специалистов.</font>
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="animate fadeInUp" data-anim-type="fadeInUp">
+                    <div class="icon_box icon_position_top no_border">
+                        <div class="image_wrapper">
+                            <img src="https://agritechhub.pl/wp-content/uploads/2016/04/icon2.jpg" class="scale-with-grid" alt="" width="" height="">
+                        </div>
+                        <div class="desc_wrapper">
+                            <h4>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Мы коммерциализируем исследования и разработки </font>
+                                </font><br>
+                            </h4>
+                            <div class="desc">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Благодаря нам наука и техника могут принести </font>
+                                </font>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">реальную пользу потребителю.</font>
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="animate fadeInUp" data-anim-type="fadeInUp">
+                    <div class="icon_box icon_position_top no_border">
+                        <div class="image_wrapper">
+                            <img src="https://agritechhub.pl/wp-content/uploads/2016/04/icon1.jpg" class="scale-with-grid" alt="" width="" height="">
+                        </div>
+                        <div class="desc_wrapper">
+                            <h4>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Поддерживаем лучшие агротех проекты</font>
+                                </font><br>
+                            </h4>
+                            <div class="desc">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">От выращивания - через производство и дистрибуцию - </font>
+                                </font>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">к конечному потребителю.</font>
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-5 m-15px-tb">
+                <p class="mb-2 investment-areas-list-header">Инвестиционные направления</p>
+                <ul class="projects-list investment-areas-list mb-2">
+                    <li>Умные поля — точное земледелие</li>
+                    <li>Биоматериалы</li>
+                    <li>Новые сорта растений</li>
+                    <li>Фудтех</li>
+                    <li>Биоэнергетика</li>
+                </ul>
+                <a href="{% url 'investment_areas' %}" class="px-btn-arrow mt-2">
+                    <span>Подробнее</span>
+                    <i class="arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

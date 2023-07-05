@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-05 09:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: base_front/context_processors.py:6
+msgid "menu_events"
+msgstr "События"
+
+#: base_front/context_processors.py:7
+msgid "menu_services"
+msgstr "Услуги"
+
+#: base_front/context_processors.py:8
+msgid "menu_projects"
+msgstr "Проекты"
+
+#: base_front/context_processors.py:9
+msgid "menu_partners"
+msgstr "Партнеры"
+
+#: base_front/context_processors.py:10
+msgid "menu_technologies"
+msgstr "Технологии"
+
+#: base_front/context_processors.py:11
+msgid "menu_farmer_training"
+msgstr "Обучение фермеров"
+
+#: base_front/templates/base_front/_about.html:6
+msgid "about_h"
+msgstr "О нас"
+
+#: base_front/templates/base_front/_about.html:10
+msgid "about_p_1"
+msgstr ""
+"AgriTech – это и есть сельскохозяйственная технология, также известная как "
+"агротехнология, представляет собой технологические усовершенствования, "
+"направленные на увеличение производства сельскохозяйственной продукции при "
+"минимальных затратах. Агротехнология включает в себя широкий спектр решений, "
+"направленных на улучшение качества и повышение устойчивости "
+"сельскохозяйственного производства с помощью цифровых технологий и "
+"автоматизации. Любая технология, которая сама по себе делает процесс ведения "
+"сельского хозяйства эффективным, называется агротехнологией."
+
+#: base_front/templates/base_front/_about.html:11
+msgid "about_p_2"
+msgstr ""
+"Hub - это централизованная платформа, которая объединяет фермеров, "
+"производителей и других участников сельскохозяйственной цепочки, и "
+"выполняющая функцию координационного центра для обмена знаниями, "
+"предоставления услуг и информации в сфере сельского хозяйства."
+
+#: base_front/templates/base_front/_about.html:12
+msgid "about_p_3"
+msgstr ""
+"AgriTech Hub — это сочетание знаний в области новых технологий и ИКТ с "
+"инвестиционным опытом команды экспертов. Наша миссия — поддерживать "
+"инновации, применимые на этапе выращивания, производства и дистрибуции, "
+"вплоть до конечного потребителя. Мы верим, что сотрудничество с лучшими "
+"исследовательскими центрами, учреждениями и партнерами — это путь к "
+"эффективным инвестициям, приносящим реальную пользу агропродовольственной "
+"отрасли, а значит — и потребителю."
+
+#: base_front/templates/base_front/events/list.html:11
+msgid "events_title"
+msgstr "Все события"
+
+#: base_front/templates/base_front/events/list.html:20
+#: base_front/templates/base_front/index.html:55
+#: base_front/templates/base_front/index.html:85
+#: base_front/templates/base_front/index.html:115
+#: base_front/templates/base_front/index.html:145
+msgid "F"
+msgstr ""
+
+#: base_front/templates/base_front/events/list.html:22
+#: base_front/templates/base_front/index.html:57
+#: base_front/templates/base_front/index.html:87
+#: base_front/templates/base_front/index.html:117
+#: base_front/templates/base_front/index.html:147
+msgid "Y"
+msgstr ""
+
+#: base_front/templates/base_front/events/list.html:38
+#: base_front/templates/base_front/index.html:73
+#: base_front/templates/base_front/index.html:103
+#: base_front/templates/base_front/index.html:133
+#: base_front/templates/base_front/index.html:163
+msgid "last_events_more_btn"
+msgstr "Подробнее"
+
+#: base_front/templates/base_front/index.html:43
+msgid "last_events_title"
+msgstr "Последние события"
+
+#: base_front/templates/base_front/investment_areas.html:11
+msgid "investment_areas_h"
+msgstr "Инвестиционные направления"
+
+#: base_front/templates/base_front/projects/list.html:11
+msgid "agro_project_h"
+msgstr "Проекты"
+
+#: base_front/templates/base_front/projects/list.html:16
+msgid "agro_project_p"
+msgstr ""
+"Мы стремимся создать благоприятную среду для успешных проектов, где ваши "
+"идеи превращаются в реальность."
+
+#: base_front/templates/base_front/projects/list.html:20
+msgid "agro_project_list"
+msgstr "Список проектов"
+
+#: base_front/templates/base_front/services/_list_tab.html:23
+msgid "service_table_name"
+msgstr "Определяемые характеристики (показатели) услуги, продукции"
+
+#: base_front/templates/base_front/services/_list_tab.html:24
+msgid "service_table_price"
+msgstr "Стоимость за 1 образец, тенге"
+
+#: base_front/templates/base_front/services/_list_tab.html:35
+msgid "service_table_more"
+msgstr "Whatsapp"
+
+#: base_front/templates/base_front/services/list.html:14
+msgid "services_h"
+msgstr "Услуги"
+
+#: base_front/templates/base_front/services/list.html:16
+msgid "services_p"
+msgstr ""
+"Лаборатории осуществляют анализы воды, почвы, воздуха, зерна, кормов, по "
+"результатам которых, дают рекомендации и предложения, оценивают качества "
+"молока, проводят генетические экспертизы животных с определением их "
+"происхождения, создают базу данных пород животных по ДНК, определяют "
+"устойчивость организма животных, птиц и рыб к заболеваниям."
+
+#, fuzzy
+#~| msgid "menu_services"
+#~ msgid "service-it"
+#~ msgstr "Услуги"
+
+#, fuzzy
+#~| msgid "agro_project_list"
+#~ msgid "agro_services_list"
+#~ msgstr "Список проектов"
+
+#~ msgid "Testzzzz"
+#~ msgstr "ddd"

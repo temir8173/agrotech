@@ -1,0 +1,64 @@
+from django.db import models
+from django.utils.translation import gettext as _
+
+from agrotech import settings
+
+
+class Topic(models.Model):
+    TYPES = [
+        ('investment-areas', 'Инвестиционные направления'),
+        ('projects', 'Проекты'),
+    ]
+    base_id = models.IntegerField(null=True, blank=True)
+    name = models.CharField(max_length=255)
+    type = models.CharField(max_length=32, choices=TYPES)
+    description = models.TextField()
+    locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
+
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return f"<{self.__class__} #{self.pk} {self.name!r}>"
+
+
+class News(models.Model):
+    base_id = models.IntegerField(null=True, blank=True)
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+    publication_date = models.DateField()
+    image = models.ImageField(upload_to='news_images/')
+    locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
+
+    class Meta:
+        verbose_name_plural = "News"
+
+
+class ServiceCategories(models.Model):
+    name_kk = models.CharField(max_length=64)
+    name_ru = models.CharField(max_length=64)
+    name_en = models.CharField(max_length=64)
+    description_kk = models.TextField(max_length=255, null=True, blank=True)
+    description_ru = models.TextField(max_length=255, null=True, blank=True)
+    description_en = models.TextField(max_length=255, null=True, blank=True)
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return self.name_ru
+
+
+class Services(models.Model):
+    base_id = models.IntegerField(null=True, blank=True)
+    name = models.CharField(max_length=64)
+    locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
+    description = models.TextField(max_length=255, null=True, blank=True)
+    price = models.CharField(max_length=64)
+    category = models.ForeignKey(ServiceCategories, on_delete=models.CASCADE, null=True, default=None)
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return self.name
