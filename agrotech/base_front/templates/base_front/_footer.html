@@ -1,3 +1,7 @@
+{% load static %}
+{% load i18n %}
+{% load custom_filters %}
+
 <!-- Footer -->
 <footer class="text-center text-lg-start text-white">
     <!-- Section: Social media -->
@@ -41,9 +45,7 @@
                 style="width: 60px; background-color: #0fe535; height: 2px"
                 />
             <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
+              {% trans "footer_slogan" %}
             </p>
           </div>
           <!-- Grid column -->
@@ -51,19 +53,19 @@
           <!-- Grid column -->
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <h6 class="text-uppercase fw-bold">{% trans "useful_links" %}</h6>
             <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #0fe535; height: 2px"
                 />
             <p>
-              <a href="#!">Your Account</a>
+              <a href="/events">{{ menu_options|dict_lookup:'/events' }}</a>
             </p>
             <p>
-              <a href="#!">Become an Affiliate</a>
+              <a href="/services">{{ menu_options|dict_lookup:'/services' }}</a>
             </p>
             <p>
-              <a href="#!">Help</a>
+              <a href="/farmer_training">{{ menu_options|dict_lookup:'/farmer_training' }}</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -71,14 +73,14 @@
           <!-- Grid column -->
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Контакты</h6>
+            <h6 class="text-uppercase fw-bold">{% trans "contacts" %}</h6>
             <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #0fe535; height: 2px"
                 />
-            <p><i class="fa fa-home mr-3"></i> Уральск, ул. Жангир хана 43</p>
-            <p><i class="fa fa-envelope mr-3"></i>  agrotech@wkau.kz</p>
-            <p><i class="fa fa-phone mr-3"></i> +7(7112)55-67-88</p>
+            <p><i class="fa fa-home mr-3"></i>{% trans "footer_address" %}</p>
+            <p><i class="fa fa-envelope mr-3"></i> <a href="mailto:agrotech@wkau.kz">agrotech@wkau.kz</a></p>
+            <p><i class="fa fa-phone mr-3"></i> <a href="tel:+77112556788">+7(7112)55-67-88</a></p>
           </div>
           <!-- Grid column -->
         </div>

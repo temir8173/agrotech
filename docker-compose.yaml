@@ -1,18 +1,20 @@
 version: "3.9"
 
 services:
-#  shop:
-#    build:
-#      context: .
-#      dockerfile: ./docker-build/Dockerfile
-#    environment:
-#      CONFIG: ProductionConfig
-#      SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://username:passwd!@pg:5432/blog
-#    ports:
-#      - "8080:80"
-#    depends_on:
-#      pg:
-#        condition: service_healthy
+  web:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    container_name: agrotech
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./agrotech/:/usr/src/app/
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    depends_on:
+      - db
 
   pg:
     image: postgres

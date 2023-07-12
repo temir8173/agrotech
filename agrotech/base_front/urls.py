@@ -10,6 +10,12 @@ urlpatterns = [
     path('projects', views.projects),
     path('project/<int:project_id>/', views.project, name='project_view'),
     path('services', views.services),
+    path('partners', views.partners),
+    path('partner/<int:partner_id>/', views.partner, name='partner_view'),
+    path('farmer_training', views.farmer_training),
+    path('consulting', views.consulting),
+    path('consulting/<str:slug>/', views.consulting_view, name='consulting_view'),
+    path('store', views.store),
 
     path('change-language/<str:language_code>/', views.change_language, name='change_language'),
 ]

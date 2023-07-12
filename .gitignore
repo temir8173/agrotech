@@ -1,3 +1,14 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
 venv/
 .idea/
 .env
+agrotech/uploads/

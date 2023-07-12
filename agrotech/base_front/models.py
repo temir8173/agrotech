@@ -62,3 +62,33 @@ class Services(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Partners(models.Model):
+    base_id = models.IntegerField(null=True, blank=True)
+    name = models.CharField(max_length=255)
+    link = models.CharField(max_length=255, null=True, blank=True)
+    logo = models.ImageField(upload_to='partners_logo/')
+    locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
+    description = models.TextField(max_length=1500, null=True, blank=True)
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return self.name
+
+
+class Consulting(models.Model):
+    base_id = models.IntegerField(null=True, blank=True)
+    name = models.CharField(max_length=255)
+    slug = models.CharField(max_length=64, null=True, blank=True)
+    locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
+    logo = models.ImageField(upload_to='consulting_logo/', null=True, blank=True)
+    description = models.TextField(max_length=1500, null=True, blank=True)
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return self.name

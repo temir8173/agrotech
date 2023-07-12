@@ -1,14 +1,16 @@
 from datetime import datetime
 from itertools import groupby
 
+from django.core.mail import send_mail, BadHeaderError
 from django.core.paginator import Paginator
 from django.db import models
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponse, Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import translation
 
 from agrotech import settings
-from base_front.models import Topic, News, ServiceCategories, Services
+from base_front.forms import FarmerTrainingForm
+from base_front.models import Topic, News, ServiceCategories, Services, Partners, Consulting
 
 
 def index(request: HttpRequest):
@@ -67,7 +69,19 @@ def events(request):
 
 
 def event_view(request, event_id):
-    event_obj = get_object_or_404(News, id=event_id)
+    locale = translation.get_language()
+
+    try:
+        event_obj = News.objects.get(id=event_id)
+    except models.ObjectDoesNotExist:
+        raise Http404()
+
+    if event_obj.locale != locale:
+        try:
+            event_obj_translation = News.objects.get(locale=locale, base_id=event_obj.base_id)
+        except models.ObjectDoesNotExist:
+            raise Http404()
+        return redirect('event_view', event_id=event_obj_translation.id)
 
     context = {
         'event_obj': event_obj,
@@ -88,7 +102,18 @@ def projects(request):
     return render(request, "base_front/projects/list.html", context)
 
 def project(request, project_id):
-    agro_project = get_object_or_404(Topic, id=project_id)
+    locale = translation.get_language()
+    try:
+        agro_project = Topic.objects.get(id=project_id)
+    except models.ObjectDoesNotExist:
+        raise Http404()
+
+    if agro_project.locale != locale:
+        try:
+            agro_project_translation = Topic.objects.get(locale=locale, base_id=agro_project.base_id)
+        except models.ObjectDoesNotExist:
+            raise Http404()
+        return redirect('project_view', project_id=agro_project_translation.id)
 
     context = {
         'agro_project': agro_project,
@@ -112,3 +137,80 @@ def services(request):
         'services_by_category': services_by_category,
     }
     return render(request, "base_front/services/list.html", context)
+
+def partners(request):
+    locale = translation.get_language()
+    partners_list = Partners.objects.order_by("id").all().filter(locale=locale)
+
+    context = {
+        'partners': partners_list,
+    }
+    return render(request, "base_front/partners/list.html", context)
+
+def partner(request, partner_id):
+    agro_partner = get_object_or_404(Partners, id=partner_id)
+
+    context = {
+        'partner': agro_partner,
+    }
+    return render(request, "base_front/partners/view.html", context)
+
+def farmer_training(request):
+    if request.method == 'POST':
+        form = FarmerTrainingForm(request.POST)
+        if form.is_valid():
+            print(request.POST)
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            # Prepare email content
+            subject = 'Обучение фермера'
+            body = f'Name: {name}\nEmail: {email}\nPhone: {email}\nMessage: {message}'
+            sender_email = 'iliyassov95@yandex.kz'  # Replace with your email address
+            recipient_email = 'temir8173@gmail.com'  # Replace with the recipient's email address
+
+            try:
+                send_mail(subject, body, sender_email, [recipient_email])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+
+            # Handle successful form submission (e.g., redirect to a thank you page)
+            return HttpResponse('Thank you for your message!')
+
+    else:
+        form = FarmerTrainingForm()
+
+    return render(request, "base_front/farmer_training.html", {'form': form})
+
+
+def consulting(request):
+    locale = translation.get_language()
+    consulting_items = Consulting.objects.all().filter(locale=locale)
+
+    context = {
+        'consulting_items': consulting_items,
+    }
+    return render(request, "base_front/consulting/list.html", context)
+
+
+def consulting_view(request, slug):
+    locale = translation.get_language()
+    try:
+        consulting_item = Consulting.objects.get(locale=locale, slug=slug)
+    except models.ObjectDoesNotExist:
+        raise Http404()
+
+    context = {
+        'consulting_item': consulting_item,
+    }
+    return render(request, "base_front/consulting/view.html", context)
+
+
+def store(request):
+    locale = translation.get_language()
+
+    context = {
+        'agro_projects': 'agro_projects',
+    }
+    return render(request, "base_front/store/index.html", context)

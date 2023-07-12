@@ -6,8 +6,8 @@ from django.utils.safestring import mark_safe
 from django.db import models
 
 from agrotech.settings import LANGUAGES
-from .forms import TopicForm, NewsForm, ServicesForm
-from .models import Topic, News, Services, ServiceCategories
+from .forms import TopicForm, NewsForm, ServicesForm, PartnersForm
+from .models import Topic, News, Services, ServiceCategories, Partners, Consulting
 
 
 class BaseModelAdmin(admin.ModelAdmin):
@@ -136,3 +136,64 @@ class ServiceCategoriesAdmin(admin.ModelAdmin):
     fields = ('name_kk', 'name_ru', 'name_en', 'description_kk', 'description_ru', 'description_en')
     list_display = ['name_kk', 'name_ru', 'name_en', 'description_kk', 'description_ru', 'description_en']
 
+
+@admin.register(Partners)
+class PartnersAdmin(BaseModelAdmin):
+    verbose_name_plural = 'Partner'
+
+    form = PartnersForm
+    fields = ('base_id', 'name', 'link', 'logo', 'locale', 'description')
+    list_display = ['name', 'locale', 'link', 'translate_links', 'logo', 'get_short_descr']
+
+    def translate_links(self, obj):
+        model = Partners
+        translations = self.translate_links_common(obj, model)
+        links = ''
+        for lang_code, translation_id in translations.items():
+            if translation_id:
+                url = reverse('admin:base_front_partners_change', args=(translation_id,))
+            else:
+                url = (
+                    reverse('admin:base_front_partners_add')
+                    + "?" + urlencode({'base_id': f"{obj.base_id}"})
+                    + "&" + urlencode({'locale': f"{lang_code}"})
+                )
+            links += format_html('<a href="{}">{}</a> ', url, lang_code)
+
+        return mark_safe(links)
+
+    def get_short_descr(self, obj):
+        if len(obj.description) > 100:
+            return obj.description[:100] + '...'
+        return obj.description
+
+
+@admin.register(Consulting)
+class ConsultingAdmin(BaseModelAdmin):
+    form = PartnersForm
+    fields = ('base_id', 'name', 'slug', 'logo', 'locale', 'description')
+    list_display = ['name', 'locale', 'slug', 'translate_links', 'logo', 'get_short_descr']
+
+    def translate_links(self, obj):
+        model = Consulting
+        translations = self.translate_links_common(obj, model)
+        links = ''
+        for lang_code, translation_id in translations.items():
+            if translation_id:
+                url = reverse('admin:base_front_consulting_change', args=(translation_id,))
+            else:
+                url = (
+                    reverse('admin:base_front_consulting_add')
+                    + "?" + urlencode({'base_id': f"{obj.base_id}"})
+                    + "&" + urlencode({'locale': f"{lang_code}"})
+                    + "&" + urlencode({'slug': f"{obj.slug}"})
+                    + "&" + urlencode({'logo': f"{obj.logo}"})
+                )
+            links += format_html('<a href="{}">{}</a> ', url, lang_code)
+
+        return mark_safe(links)
+
+    def get_short_descr(self, obj):
+        if len(obj.description) > 100:
+            return obj.description[:100] + '...'
+        return obj.description

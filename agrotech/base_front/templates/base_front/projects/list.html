@@ -5,28 +5,51 @@
 
 {% block body %}
 
-<section id="investment-areas" class="blog-listing section-padding mt-5">
+<section id="investment-areas" class="blog-listing section-padding mt-3 projects">
     <div class="container">
-        <div class="row">
-            <h4>{% trans "agro_project_h" %}</h4>
-            <div class="col-lg-12 mb-5 agr-project-img-box">
-                <img src="{% static 'base_front/assets/images/agrprojects.jpg' %}" alt="">
+        <div class="row mt-4 mb-5">
+            {% if 0 %}
+                <div class="col-lg-12 mb-4 agr-project-img-box">
+                    <img src="{% static 'base_front/assets/images/elevator.jpg' %}" alt="">
+                </div>
+            {% endif %}
+            <div class="col-lg-6 mt-3 ">
+                <h4 class="mt-4">{% trans "agro_project_h" %}</h4>
+                <p>{% trans "agro_project_p" %}</p>
             </div>
-
-            <p>{% trans "agro_project_p" %}</p>
+            <div class="col-lg-4 mb-4 ">
+                <img width="200" src="{% static 'base_front/assets/images/agro-pie.png' %}" alt="">
+            </div>
         </div>
         <div class="row align-items-start">
-            <div class="col-lg-12 mt-5 m-15px-tb">
-                <ul class="projects-list">
-                    {% for agro_project in agro_projects %}
-                        <li>
-                            <a href="{% url 'project_view' agro_project.id %}">
-                                {{ agro_project.name }}
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+            {% for agro_project in agro_projects %}
+                <div class="col-xl-6 col-lg-6 col-sm-12">
+                    <div class="blog-grid">
+                        <div class="blog-info">
+                            <h5><a href="{% url 'project_view' agro_project.id %}">{{ agro_project.name }}</a></h5>
+                            <div class="btn-bar">
+                                <a href="{% url 'project_view' agro_project.id %}" class="px-btn-arrow">
+                                    <span>{% trans "last_events_more_btn" %}</span>
+                                    <i class="arrow"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-sm-12">
+                    <div class="blog-grid">
+                        <div class="blog-info">
+                            <h5><a href="{% url 'project_view' agro_project.id %}">{{ agro_project.name }}</a></h5>
+                            <div class="btn-bar">
+                                <a href="{% url 'project_view' agro_project.id %}" class="px-btn-arrow">
+                                    <span>{% trans "last_events_more_btn" %}</span>
+                                    <i class="arrow"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>

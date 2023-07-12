@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-05 09:16+0000\n"
+"POT-Creation-Date: 2023-07-12 04:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,22 +25,26 @@ msgid "menu_events"
 msgstr "События"
 
 #: base_front/context_processors.py:7
+msgid "menu_consulting"
+msgstr "Консалтинг"
+
+#: base_front/context_processors.py:8
 msgid "menu_services"
 msgstr "Услуги"
 
-#: base_front/context_processors.py:8
+#: base_front/context_processors.py:9
 msgid "menu_projects"
 msgstr "Проекты"
 
-#: base_front/context_processors.py:9
+#: base_front/context_processors.py:10
 msgid "menu_partners"
 msgstr "Партнеры"
 
-#: base_front/context_processors.py:10
-msgid "menu_technologies"
-msgstr "Технологии"
-
 #: base_front/context_processors.py:11
+msgid "menu_store"
+msgstr "Магазин"
+
+#: base_front/context_processors.py:13
 msgid "menu_farmer_training"
 msgstr "Обучение фермеров"
 
@@ -79,35 +83,101 @@ msgstr ""
 "эффективным инвестициям, приносящим реальную пользу агропродовольственной "
 "отрасли, а значит — и потребителю."
 
+#: base_front/templates/base_front/_footer.html:48
+msgid "footer_slogan"
+msgstr ""
+"Agrotech Hub представляет собой сочетание принципа триединства: государства, "
+"бизнеса и университета для создания благоприятной среды в реализации проектов"
+
+#: base_front/templates/base_front/_footer.html:56
+msgid "useful_links"
+msgstr "Полезные ссылки"
+
+#: base_front/templates/base_front/_footer.html:76
+msgid "contacts"
+msgstr "Контакты"
+
+#: base_front/templates/base_front/_footer.html:81
+msgid "footer_address"
+msgstr "Уральск, ул. Жангир хана 43"
+
+#: base_front/templates/base_front/consulting/list.html:12
+msgid "consulting_h"
+msgstr "Консалтинг"
+
+#: base_front/templates/base_front/consulting/list.html:13
+msgid "consulting_p"
+msgstr "Качественный консалтинг - ключ к вашему успеху!"
+
 #: base_front/templates/base_front/events/list.html:11
 msgid "events_title"
 msgstr "Все события"
 
 #: base_front/templates/base_front/events/list.html:20
-#: base_front/templates/base_front/index.html:55
-#: base_front/templates/base_front/index.html:85
-#: base_front/templates/base_front/index.html:115
-#: base_front/templates/base_front/index.html:145
+#: base_front/templates/base_front/index.html:58
+#: base_front/templates/base_front/index.html:88
+#: base_front/templates/base_front/index.html:118
+#: base_front/templates/base_front/index.html:148
 msgid "F"
 msgstr ""
 
 #: base_front/templates/base_front/events/list.html:22
-#: base_front/templates/base_front/index.html:57
-#: base_front/templates/base_front/index.html:87
-#: base_front/templates/base_front/index.html:117
-#: base_front/templates/base_front/index.html:147
+#: base_front/templates/base_front/index.html:60
+#: base_front/templates/base_front/index.html:90
+#: base_front/templates/base_front/index.html:120
+#: base_front/templates/base_front/index.html:150
 msgid "Y"
 msgstr ""
 
 #: base_front/templates/base_front/events/list.html:38
-#: base_front/templates/base_front/index.html:73
-#: base_front/templates/base_front/index.html:103
-#: base_front/templates/base_front/index.html:133
-#: base_front/templates/base_front/index.html:163
+#: base_front/templates/base_front/index.html:76
+#: base_front/templates/base_front/index.html:106
+#: base_front/templates/base_front/index.html:136
+#: base_front/templates/base_front/index.html:166
+#: base_front/templates/base_front/projects/list.html:32
+#: base_front/templates/base_front/projects/list.html:45
 msgid "last_events_more_btn"
 msgstr "Подробнее"
 
-#: base_front/templates/base_front/index.html:43
+#: base_front/templates/base_front/farmer_training.html:12
+msgid "farmer_training_h"
+msgstr "Обучение фермеров"
+
+#: base_front/templates/base_front/farmer_training.html:13
+msgid "farmer_training_p"
+msgstr "Обучение фермеров текст"
+
+#: base_front/templates/base_front/farmer_training.html:24
+msgid "farmer_name"
+msgstr "Имя и фамилия"
+
+#: base_front/templates/base_front/farmer_training.html:29
+msgid "farmer_email"
+msgstr "Email"
+
+#: base_front/templates/base_front/farmer_training.html:34
+msgid "farmer_phone"
+msgstr "Номер телефона"
+
+#: base_front/templates/base_front/farmer_training.html:39
+msgid "farmer_message"
+msgstr "Сообщение"
+
+#: base_front/templates/base_front/farmer_training.html:43
+msgid "submit_btn"
+msgstr "Отправить"
+
+#: base_front/templates/base_front/index.html:24
+msgid "banner_header"
+msgstr "Агротех Хаб"
+
+#: base_front/templates/base_front/index.html:25
+msgid "banner_descr"
+msgstr ""
+"AgroTech Hub представляет собой сочетание принципа триединства: государства, "
+"бизнеса и университета"
+
+#: base_front/templates/base_front/index.html:46
 msgid "last_events_title"
 msgstr "Последние события"
 
@@ -115,19 +185,23 @@ msgstr "Последние события"
 msgid "investment_areas_h"
 msgstr "Инвестиционные направления"
 
-#: base_front/templates/base_front/projects/list.html:11
+#: base_front/templates/base_front/partners/list.html:11
+msgid "agro_partners_h"
+msgstr "Партнеры"
+
+#: base_front/templates/base_front/partners/list.html:14
+msgid "agro_partners_p"
+msgstr ""
+
+#: base_front/templates/base_front/projects/list.html:17
 msgid "agro_project_h"
 msgstr "Проекты"
 
-#: base_front/templates/base_front/projects/list.html:16
+#: base_front/templates/base_front/projects/list.html:18
 msgid "agro_project_p"
 msgstr ""
 "Мы стремимся создать благоприятную среду для успешных проектов, где ваши "
 "идеи превращаются в реальность."
-
-#: base_front/templates/base_front/projects/list.html:20
-msgid "agro_project_list"
-msgstr "Список проектов"
 
 #: base_front/templates/base_front/services/_list_tab.html:23
 msgid "service_table_name"
@@ -136,10 +210,6 @@ msgstr "Определяемые характеристики (показате�
 #: base_front/templates/base_front/services/_list_tab.html:24
 msgid "service_table_price"
 msgstr "Стоимость за 1 образец, тенге"
-
-#: base_front/templates/base_front/services/_list_tab.html:35
-msgid "service_table_more"
-msgstr "Whatsapp"
 
 #: base_front/templates/base_front/services/list.html:14
 msgid "services_h"
@@ -153,6 +223,22 @@ msgstr ""
 "молока, проводят генетические экспертизы животных с определением их "
 "происхождения, создают базу данных пород животных по ДНК, определяют "
 "устойчивость организма животных, птиц и рыб к заболеваниям."
+
+#: base_front/templates/base_front/store/index.html:12
+msgid "store_h"
+msgstr "Магазин"
+
+#~ msgid "banner_preheader"
+#~ msgstr "Офисный проект"
+
+#~ msgid "menu_technologies"
+#~ msgstr "Технологии"
+
+#~ msgid "agro_project_list"
+#~ msgstr "Список проектов"
+
+#~ msgid "service_table_more"
+#~ msgstr "Whatsapp"
 
 #, fuzzy
 #~| msgid "menu_services"
