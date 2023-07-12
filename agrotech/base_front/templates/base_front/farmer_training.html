@@ -1,0 +1,48 @@
+{% extends 'base_front/layout.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+
+<section id="investment-areas" class="blog-listing section-padding mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mt-5">
+                <h4>{% trans "farmer_training_h" %}</h4>
+                <p>{% trans "farmer_training_p" %}</p>
+            </div>
+            <div class="col-lg-6 mb-4 ">
+                <img src="{% static 'base_front/assets/images/education.png' %}" alt="">
+            </div>
+        </div>
+
+        <form method="POST" class="farmer-training mt-5">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="{{ form.name.id_for_label }}" class="form-label">{% trans "farmer_name" %}</label>
+                {{ form.name }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}" class="form-label">{% trans "farmer_email" %}</label>
+                {{ form.email }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.phone.id_for_label }}" class="form-label">{% trans "farmer_phone" %}</label>
+                {{ form.phone }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.message.id_for_label }}" class="form-label">{% trans "farmer_message" %}</label>
+                {{ form.message }}
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-5">{% trans "submit_btn" %}</button>
+        </form>
+
+    </div>
+</section>
+{% endblock %}

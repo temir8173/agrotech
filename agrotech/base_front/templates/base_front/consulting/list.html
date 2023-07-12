@@ -1,0 +1,40 @@
+{% extends 'base_front/layout.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+
+<section id="investment-areas" class="blog-listing section-padding consulting">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-7 mt-5">
+                <h4>{% trans "consulting_h" %}</h4>
+                <p>{% trans "consulting_p" %}</p>
+            </div>
+            <div class="col-lg-4 mb-4 ">
+                {% if 0 %}
+                    <div class="hex-menu">
+                        {% include 'base_front/consulting/_hex_menu.html' %}
+                    </div>
+                {% endif %}
+
+                <img src="{% static 'base_front/assets/images/consulting.png' %}" alt="">
+            </div>
+        </div>
+        <div class="row align-items-start">
+                {% for consulting_item in consulting_items %}
+                    <div class="col-lg-3 mt-5 m-15px-tb">
+                        <div class="consulting-item">
+                            <a href="{% url 'consulting_view' consulting_item.slug %}">
+                                <img src="{{ consulting_item.logo.url }}" title="" alt="">
+                                <p>{{ consulting_item.name }}</p>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

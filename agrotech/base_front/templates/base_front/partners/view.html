@@ -1,0 +1,29 @@
+{% extends 'base_front/layout.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+
+<section id="investment-areas" class="blog-listing section-padding mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 m-15px-tb partner-box-view">
+                <h4>{{ partner.name }}</h4>
+                <div class="img-box">
+                    <div>
+                        <img src="{{ partner.logo.url }}" title="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 m-15px-tb">
+                <a href="{{ partner.link }}" target="_blank" class="partner-link inv-box-text">
+                    {{ partner.link }}
+                </a>
+                <span class="inv-box-text">{{ partner.description|safe }}</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

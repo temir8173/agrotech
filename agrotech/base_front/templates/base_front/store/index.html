@@ -1,0 +1,21 @@
+{% extends 'base_front/layout.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+
+<section id="investment-areas" class="blog-listing section-padding mt-3 projects">
+    <div class="container">
+        <div class="row mt-4 mb-5">
+            <div class="col-lg-6 mt-3 ">
+                <h4 class="mt-4">{% trans "store_h" %}</h4>
+            </div>
+            <div class="col-lg-4 mb-4 ">
+                <img width="200" src="{% static 'base_front/assets/images/agro-pie.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

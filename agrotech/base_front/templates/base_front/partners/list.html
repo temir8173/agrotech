@@ -1,0 +1,36 @@
+{% extends 'base_front/layout.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+
+<section id="investment-areas" class="blog-listing section-padding mt-5">
+    <div class="container">
+        <div class="row">
+            <h4>{% trans "agro_partners_h" %}</h4>
+
+            {% if 0 %}
+                <p>{% trans "agro_partners_p" %}</p>
+            {% endif %}
+        </div>
+        <div class="row align-items-start">
+            {% for partner in partners %}
+            <div class="col-lg-3 col-md-6 mb-5">
+                <div class="partner-box">
+                    <a href="{% url 'partner_view' partner.id %}">
+                        <div class="img-box">
+                            <div>
+                                <img src="{{ partner.logo.url }}" title="" alt="">
+                            </div>
+                        </div>
+                        <p class="partner-name">{{ partner.name }}</p>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
