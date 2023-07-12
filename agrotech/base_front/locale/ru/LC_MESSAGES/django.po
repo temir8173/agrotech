@@ -145,7 +145,7 @@ msgstr "Обучение фермеров"
 
 #: base_front/templates/base_front/farmer_training.html:13
 msgid "farmer_training_p"
-msgstr "Обучение фермеров текст"
+msgstr "Объединение экспертов в аграрном секторе помогает передавать новые знания фермерам в целях улучшения производства."
 
 #: base_front/templates/base_front/farmer_training.html:24
 msgid "farmer_name"
