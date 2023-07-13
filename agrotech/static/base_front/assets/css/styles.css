@@ -2544,6 +2544,18 @@ form.farmer-training textarea {
 .consulting-item p {
   color: #fff;
 }
+@media screen and (min-width: 1400px) {
+  .consulting-item a, .consulting-item span {
+    width: 220px;
+    height: 220px;
+  }
+  .consulting-item img {
+    width: 50px;
+  }
+  .consulting-item p {
+    font-size: 14px;
+  }
+}
 .consulting-item span img {
   width: 120px;
   margin-bottom: 0;
