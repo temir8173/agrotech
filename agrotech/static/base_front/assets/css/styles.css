@@ -2568,3 +2568,16 @@ form.farmer-training textarea {
 .farmer-training .form-group {
   margin-bottom: 15px;
 }
+
+@media screen and (min-width: 1200px) {
+  .institutes-row {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .consulting-item {
+    display: flex;
+    justify-content: center;
+  }
+}
