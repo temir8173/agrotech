@@ -519,7 +519,6 @@ div.pagination {
 
 .header-area .main-nav .menu-trigger {
   cursor: pointer;
-  display: block;
   position: absolute;
   top: 33px;
   width: 32px;

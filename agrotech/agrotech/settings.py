@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'base_front.apps.BaseFrontConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'corsheaders',
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"  # Specify the upload path for images
@@ -73,6 +74,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'agrotech.urls'
@@ -176,3 +178,24 @@ EMAIL_PORT = 465
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'iliyassov95@yandex.kz'
 EMAIL_HOST_PASSWORD = 'gnjorsjckvlamcxt'
+
+CORS_ALLOWED_ORIGINS = [
+    "https://agritech-hub.wkau.kz",  # Replace with your actual origin
+    # Add other allowed origins if needed
+]
+
+# Optional: Allow credentials (cookies, Authorization headers) to be included in CORS requests
+CORS_ALLOW_CREDENTIALS = True
+
+# Optional: Specify which headers can be included in CORS requests
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
