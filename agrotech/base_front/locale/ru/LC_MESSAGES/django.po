@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-12 04:52+0000\n"
+"POT-Creation-Date: 2023-08-29 07:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,6 +83,10 @@ msgstr ""
 "эффективным инвестициям, приносящим реальную пользу агропродовольственной "
 "отрасли, а значит — и потребителю."
 
+#: base_front/templates/base_front/_footer.html:14
+msgid "our_social_links"
+msgstr "Мы в социальных сетях:"
+
 #: base_front/templates/base_front/_footer.html:48
 msgid "footer_slogan"
 msgstr ""
@@ -145,7 +149,9 @@ msgstr "Обучение фермеров"
 
 #: base_front/templates/base_front/farmer_training.html:13
 msgid "farmer_training_p"
-msgstr "Объединение экспертов в аграрном секторе помогает передавать новые знания фермерам в целях улучшения производства."
+msgstr ""
+"Объединение экспертов в аграрном секторе помогает передавать новые знания "
+"фермерам в целях улучшения производства."
 
 #: base_front/templates/base_front/farmer_training.html:24
 msgid "farmer_name"
@@ -159,7 +165,7 @@ msgstr "Email"
 msgid "farmer_phone"
 msgstr "Номер телефона"
 
-#: base_front/templates/base_front/faыrmer_training.html:39
+#: base_front/templates/base_front/farmer_training.html:39
 msgid "farmer_message"
 msgstr "Интересующий вопрос"
 

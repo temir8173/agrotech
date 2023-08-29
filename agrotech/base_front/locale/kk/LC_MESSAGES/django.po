@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-29 06:15+0000\n"
+"POT-Creation-Date: 2023-08-29 07:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,9 +79,15 @@ msgstr ""
 "серіктестермен ынтымақтасу агроазық-түлік саласына, демек тұтынушыға нақты "
 "пайда әкелетін тиімді инвестицияларға апаратын жол деп есептейміз."
 
+#: base_front/templates/base_front/_footer.html:14
+msgid "our_social_links"
+msgstr "Біз әлеуметтік желілерде:"
+
 #: base_front/templates/base_front/_footer.html:48
 msgid "footer_slogan"
-msgstr "Agrotech Hub – жобаны жүзеге асыру үшін қолайлы жағдай жасау үшін мемлекет, бизнес және университет үштік принципінің үйлесімі."
+msgstr ""
+"Agrotech Hub – жобаны жүзеге асыру үшін қолайлы жағдай жасау үшін мемлекет, "
+"бизнес және университет үштік принципінің үйлесімі."
 
 #: base_front/templates/base_front/_footer.html:56
 msgid "useful_links"
@@ -93,7 +99,7 @@ msgstr "Байланыс"
 
 #: base_front/templates/base_front/_footer.html:81
 msgid "footer_address"
-msgstr "орал, Жәңгір хан 45"
+msgstr "Орал, Жәңгір хан 45"
 
 #: base_front/templates/base_front/consulting/list.html:12
 msgid "consulting_h"
@@ -139,7 +145,9 @@ msgstr "Фермерлерді оқыту"
 
 #: base_front/templates/base_front/farmer_training.html:13
 msgid "farmer_training_p"
-msgstr "Аграрлық сектордағы мамандарды біріктіру өндірісті жақсарту мақсатында фермерлерге жаңа білім беруге көмектеседі."
+msgstr ""
+"Аграрлық сектордағы мамандарды біріктіру өндірісті жақсарту мақсатында "
+"фермерлерге жаңа білім беруге көмектеседі."
 
 #: base_front/templates/base_front/farmer_training.html:24
 msgid "farmer_name"
@@ -167,7 +175,8 @@ msgstr "АГРОТЕХ ХАБ"
 
 #: base_front/templates/base_front/index.html:25
 msgid "banner_descr"
-msgstr "AgroTech Hub үштік принципінің үйлесімі: мемлекет, бизнес және университет"
+msgstr ""
+"AgroTech Hub үштік принципінің үйлесімі: мемлекет, бизнес және университет"
 
 #: base_front/templates/base_front/index.html:46
 msgid "last_events_title"
@@ -193,7 +202,9 @@ msgstr "Жобалар"
 
 #: base_front/templates/base_front/projects/list.html:18
 msgid "agro_project_p"
-msgstr "Біз сіздің идеяларыңыз шындыққа айналатын табысты жобалар үшін қолайлы жағдай жасауға ұмтыламыз."
+msgstr ""
+"Біз сіздің идеяларыңыз шындыққа айналатын табысты жобалар үшін қолайлы "
+"жағдай жасауға ұмтыламыз."
 
 #: base_front/templates/base_front/services/_list_tab.html:23
 msgid "service_table_name"
@@ -209,10 +220,12 @@ msgstr "Қызметтер"
 
 #: base_front/templates/base_front/services/list.html:16
 msgid "services_p"
-msgstr "Зертханалар суға, топыраққа, ауаға, дәнге, жемге талдау жүргізеді, соның негізінде ұсыныстар мен ұсыныстар"
-" береді, сүттің сапасын бағалайды, олардың шығу тегін анықтау үшін жануарларға генетикалық сараптама жүргізеді,"
-" ДНҚ бойынша мал тұқымдарының деректер базасын жасайды, жануарлардың тұқымдарын анықтайды. жануарлар, құстар мен"
-" балықтар организмінің ауруларға төзімділігі."
+msgstr ""
+"Зертханалар суға, топыраққа, ауаға, дәнге, жемге талдау жүргізеді, соның "
+"негізінде ұсыныстар мен ұсыныстар береді, сүттің сапасын бағалайды, олардың "
+"шығу тегін анықтау үшін жануарларға генетикалық сараптама жүргізеді, ДНҚ "
+"бойынша мал тұқымдарының деректер базасын жасайды, жануарлардың тұқымдарын "
+"анықтайды. жануарлар, құстар мен балықтар организмінің ауруларға төзімділігі."
 
 #: base_front/templates/base_front/store/index.html:12
 msgid "store_h"
