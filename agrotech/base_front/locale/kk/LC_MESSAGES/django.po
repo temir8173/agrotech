@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-20 07:31+0000\n"
+"POT-Creation-Date: 2023-08-29 06:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,22 +23,26 @@ msgid "menu_events"
 msgstr "Жаңалықтар"
 
 #: base_front/context_processors.py:7
+msgid "menu_consulting"
+msgstr "Консалтинг"
+
+#: base_front/context_processors.py:8
 msgid "menu_services"
 msgstr "Қызметтер"
 
-#: base_front/context_processors.py:8
+#: base_front/context_processors.py:9
 msgid "menu_projects"
 msgstr "Жобалар"
 
-#: base_front/context_processors.py:9
+#: base_front/context_processors.py:10
 msgid "menu_partners"
 msgstr "Серіктестер"
 
-#: base_front/context_processors.py:10
-msgid "menu_technologies"
-msgstr "Технологиялар"
-
 #: base_front/context_processors.py:11
+msgid "menu_store"
+msgstr "Магазин"
+
+#: base_front/context_processors.py:13
 msgid "menu_farmer_training"
 msgstr "Фермерлерді оқыту"
 
@@ -75,29 +79,144 @@ msgstr ""
 "серіктестермен ынтымақтасу агроазық-түлік саласына, демек тұтынушыға нақты "
 "пайда әкелетін тиімді инвестицияларға апаратын жол деп есептейміз."
 
+#: base_front/templates/base_front/_footer.html:48
+msgid "footer_slogan"
+msgstr "Agrotech Hub – жобаны жүзеге асыру үшін қолайлы жағдай жасау үшін мемлекет, бизнес және университет үштік принципінің үйлесімі."
+
+#: base_front/templates/base_front/_footer.html:56
+msgid "useful_links"
+msgstr "Пайдалы сілтемелер"
+
+#: base_front/templates/base_front/_footer.html:76
+msgid "contacts"
+msgstr "Байланыс"
+
+#: base_front/templates/base_front/_footer.html:81
+msgid "footer_address"
+msgstr "орал, Жәңгір хан 45"
+
+#: base_front/templates/base_front/consulting/list.html:12
+msgid "consulting_h"
+msgstr "КОНСАЛТИНГ"
+
+#: base_front/templates/base_front/consulting/list.html:13
+msgid "consulting_p"
+msgstr "Сапалы кеңес беру - сіздің табысыңыздың кілті!"
+
 #: base_front/templates/base_front/events/list.html:11
 msgid "events_title"
 msgstr "Барлық жаңалықтар"
 
 #: base_front/templates/base_front/events/list.html:20
-#: base_front/templates/base_front/index.html:55
+#: base_front/templates/base_front/index.html:58
+#: base_front/templates/base_front/index.html:88
+#: base_front/templates/base_front/index.html:118
+#: base_front/templates/base_front/index.html:148
 msgid "F"
 msgstr ""
 
 #: base_front/templates/base_front/events/list.html:22
-#: base_front/templates/base_front/index.html:57
+#: base_front/templates/base_front/index.html:60
+#: base_front/templates/base_front/index.html:90
+#: base_front/templates/base_front/index.html:120
+#: base_front/templates/base_front/index.html:150
 msgid "Y"
 msgstr ""
 
 #: base_front/templates/base_front/events/list.html:38
-#: base_front/templates/base_front/index.html:73
+#: base_front/templates/base_front/index.html:76
+#: base_front/templates/base_front/index.html:106
+#: base_front/templates/base_front/index.html:136
+#: base_front/templates/base_front/index.html:166
+#: base_front/templates/base_front/projects/list.html:32
+#: base_front/templates/base_front/projects/list.html:45
 msgid "last_events_more_btn"
 msgstr "Толығырақ"
 
-#: base_front/templates/base_front/index.html:43
+#: base_front/templates/base_front/farmer_training.html:12
+msgid "farmer_training_h"
+msgstr "Фермерлерді оқыту"
+
+#: base_front/templates/base_front/farmer_training.html:13
+msgid "farmer_training_p"
+msgstr "Аграрлық сектордағы мамандарды біріктіру өндірісті жақсарту мақсатында фермерлерге жаңа білім беруге көмектеседі."
+
+#: base_front/templates/base_front/farmer_training.html:24
+msgid "farmer_name"
+msgstr "Аты-жөніңіз"
+
+#: base_front/templates/base_front/farmer_training.html:29
+msgid "farmer_email"
+msgstr "Email"
+
+#: base_front/templates/base_front/farmer_training.html:34
+msgid "farmer_phone"
+msgstr "Телефон нөміріңіз"
+
+#: base_front/templates/base_front/farmer_training.html:39
+msgid "farmer_message"
+msgstr "Қызықтыратын сұрағыңыз"
+
+#: base_front/templates/base_front/farmer_training.html:43
+msgid "submit_btn"
+msgstr "Жіберу"
+
+#: base_front/templates/base_front/index.html:24
+msgid "banner_header"
+msgstr "АГРОТЕХ ХАБ"
+
+#: base_front/templates/base_front/index.html:25
+msgid "banner_descr"
+msgstr "AgroTech Hub үштік принципінің үйлесімі: мемлекет, бизнес және университет"
+
+#: base_front/templates/base_front/index.html:46
 msgid "last_events_title"
 msgstr "Соңғы жаңалықтар"
 
 #: base_front/templates/base_front/investment_areas.html:11
 msgid "investment_areas_h"
 msgstr "Инвестициялау бағыттары"
+
+#: base_front/templates/base_front/partners/list.html:11
+msgid "agro_partners_h"
+msgstr "Серіктестер"
+
+#: base_front/templates/base_front/partners/list.html:14
+#, fuzzy
+#| msgid "menu_partners"
+msgid "agro_partners_p"
+msgstr "Серіктестер"
+
+#: base_front/templates/base_front/projects/list.html:17
+msgid "agro_project_h"
+msgstr "Жобалар"
+
+#: base_front/templates/base_front/projects/list.html:18
+msgid "agro_project_p"
+msgstr "Біз сіздің идеяларыңыз шындыққа айналатын табысты жобалар үшін қолайлы жағдай жасауға ұмтыламыз."
+
+#: base_front/templates/base_front/services/_list_tab.html:23
+msgid "service_table_name"
+msgstr "Қызметтердің, өнімнің анықталған сипаттамалары (көрсеткіштері)."
+
+#: base_front/templates/base_front/services/_list_tab.html:24
+msgid "service_table_price"
+msgstr "1 үлгінің құны, теңге"
+
+#: base_front/templates/base_front/services/list.html:14
+msgid "services_h"
+msgstr "Қызметтер"
+
+#: base_front/templates/base_front/services/list.html:16
+msgid "services_p"
+msgstr "Зертханалар суға, топыраққа, ауаға, дәнге, жемге талдау жүргізеді, соның негізінде ұсыныстар мен ұсыныстар"
+" береді, сүттің сапасын бағалайды, олардың шығу тегін анықтау үшін жануарларға генетикалық сараптама жүргізеді,"
+" ДНҚ бойынша мал тұқымдарының деректер базасын жасайды, жануарлардың тұқымдарын анықтайды. жануарлар, құстар мен"
+" балықтар организмінің ауруларға төзімділігі."
+
+#: base_front/templates/base_front/store/index.html:12
+msgid "store_h"
+msgstr "Магазин"
+
+#~ msgid "menu_technologies"
+#~ msgstr "Технологиялар"

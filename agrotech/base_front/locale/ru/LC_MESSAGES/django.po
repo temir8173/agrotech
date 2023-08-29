@@ -159,9 +159,9 @@ msgstr "Email"
 msgid "farmer_phone"
 msgstr "Номер телефона"
 
-#: base_front/templates/base_front/farmer_training.html:39
+#: base_front/templates/base_front/faыrmer_training.html:39
 msgid "farmer_message"
-msgstr "Сообщение"
+msgstr "Интересующий вопрос"
 
 #: base_front/templates/base_front/farmer_training.html:43
 msgid "submit_btn"
