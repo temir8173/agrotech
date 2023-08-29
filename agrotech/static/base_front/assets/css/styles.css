@@ -2017,8 +2017,11 @@ footer h6 em {
 }
 .icon_box .image_wrapper, .icon_box .icon_wrapper {
     padding-top: 5px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     text-align: center;
+}
+.icon_box .image_wrapper img {
+    width: 150px;
 }
 img.scale-with-grid {
     max-width: 40%;
