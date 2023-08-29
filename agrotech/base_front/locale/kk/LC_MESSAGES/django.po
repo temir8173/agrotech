@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-29 07:21+0000\n"
+"POT-Creation-Date: 2023-08-29 08:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,11 +46,11 @@ msgstr "Магазин"
 msgid "menu_farmer_training"
 msgstr "Фермерлерді оқыту"
 
-#: base_front/templates/base_front/_about.html:6
+#: base_front/templates/base_front/_about.html:7
 msgid "about_h"
 msgstr "Біз туралы"
 
-#: base_front/templates/base_front/_about.html:10
+#: base_front/templates/base_front/_about.html:11
 msgid "about_p_1"
 msgstr ""
 "AgriTech - бұл ауылшаруашылық технологиясы, ол агротехнология деп те "
@@ -61,7 +61,7 @@ msgstr ""
 "Ауылшаруашылық процесін тиімді ететін кез-келген технология агротехнология "
 "деп аталады."
 
-#: base_front/templates/base_front/_about.html:11
+#: base_front/templates/base_front/_about.html:12
 msgid "about_p_2"
 msgstr ""
 "Hub - бұл фермерлерді, өндірушілерді және ауылшаруашылық тізбегінің басқа "
@@ -69,7 +69,7 @@ msgstr ""
 "қызметтер мен ақпарат беру үшін үйлестіру орталығы қызметін атқаратын "
 "орталықтандырылған платформа."
 
-#: base_front/templates/base_front/_about.html:12
+#: base_front/templates/base_front/_about.html:13
 msgid "about_p_3"
 msgstr ""
 "AgriTech Hub – бұл жаңа технологиялар мен АКТ саласындағы білімнің "
@@ -78,6 +78,66 @@ msgstr ""
 "инновацияларды қолдау. Үздік ғылыми орталықтармен, мекемелермен және "
 "серіктестермен ынтымақтасу агроазық-түлік саласына, демек тұтынушыға нақты "
 "пайда әкелетін тиімді инвестицияларға апаратын жол деп есептейміз."
+
+#: base_front/templates/base_front/_about.html:26
+msgid "about_1_h"
+msgstr "Бізде ақпараттық технологиялар және инвестиция туралы білім бар"
+
+#: base_front/templates/base_front/_about.html:27
+msgid "about_1_p"
+msgstr "Біз тәжірибелі мамандардан құралған командамыз."
+
+#: base_front/templates/base_front/_about.html:41
+msgid "about_2_h"
+msgstr "Біз зерттеулер мен әзірлемелерді коммерцияландырамыз"
+
+#: base_front/templates/base_front/_about.html:42
+msgid "about_2_p"
+msgstr "Біздің арқасында ғылым мен технология тұтынушыға нақты пайда әкеле алады."
+
+#: base_front/templates/base_front/_about.html:56
+msgid "about_3_h"
+msgstr "Біз үздік агротехнологиялық жобаларды қолдаймыз"
+
+#: base_front/templates/base_front/_about.html:57
+msgid "about_3_p"
+msgstr "Өсіруден бастап - өндіру және тарату арқылы - соңғы тұтынушыға дейін."
+
+#: base_front/templates/base_front/_about.html:65
+#: base_front/templates/base_front/investment_areas.html:11
+msgid "investment_areas_h"
+msgstr "Инвестициялау бағыттары"
+
+#: base_front/templates/base_front/_about.html:67
+msgid "investment_area_1"
+msgstr "Ақылды алқаптар – дәл егіншілік"
+
+#: base_front/templates/base_front/_about.html:68
+msgid "investment_area_2"
+msgstr "Биоматериалдар"
+
+#: base_front/templates/base_front/_about.html:69
+msgid "investment_area_3"
+msgstr "Өсімдіктердің жаңа сорттары"
+
+#: base_front/templates/base_front/_about.html:70
+msgid "investment_area_4"
+msgstr "Фудтех"
+
+#: base_front/templates/base_front/_about.html:71
+msgid "investment_area_5"
+msgstr "Биоэнергетика"
+
+#: base_front/templates/base_front/_about.html:79
+#: base_front/templates/base_front/events/list.html:38
+#: base_front/templates/base_front/index.html:76
+#: base_front/templates/base_front/index.html:106
+#: base_front/templates/base_front/index.html:136
+#: base_front/templates/base_front/index.html:166
+#: base_front/templates/base_front/projects/list.html:32
+#: base_front/templates/base_front/projects/list.html:45
+msgid "last_events_more_btn"
+msgstr "Толығырақ"
 
 #: base_front/templates/base_front/_footer.html:14
 msgid "our_social_links"
@@ -129,16 +189,6 @@ msgstr ""
 msgid "Y"
 msgstr ""
 
-#: base_front/templates/base_front/events/list.html:38
-#: base_front/templates/base_front/index.html:76
-#: base_front/templates/base_front/index.html:106
-#: base_front/templates/base_front/index.html:136
-#: base_front/templates/base_front/index.html:166
-#: base_front/templates/base_front/projects/list.html:32
-#: base_front/templates/base_front/projects/list.html:45
-msgid "last_events_more_btn"
-msgstr "Толығырақ"
-
 #: base_front/templates/base_front/farmer_training.html:12
 msgid "farmer_training_h"
 msgstr "Фермерлерді оқыту"
@@ -181,10 +231,6 @@ msgstr ""
 #: base_front/templates/base_front/index.html:46
 msgid "last_events_title"
 msgstr "Соңғы жаңалықтар"
-
-#: base_front/templates/base_front/investment_areas.html:11
-msgid "investment_areas_h"
-msgstr "Инвестициялау бағыттары"
 
 #: base_front/templates/base_front/partners/list.html:11
 msgid "agro_partners_h"

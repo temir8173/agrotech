@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-29 07:21+0000\n"
+"POT-Creation-Date: 2023-08-29 08:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,11 +48,11 @@ msgstr "Магазин"
 msgid "menu_farmer_training"
 msgstr "Обучение фермеров"
 
-#: base_front/templates/base_front/_about.html:6
+#: base_front/templates/base_front/_about.html:7
 msgid "about_h"
 msgstr "О нас"
 
-#: base_front/templates/base_front/_about.html:10
+#: base_front/templates/base_front/_about.html:11
 msgid "about_p_1"
 msgstr ""
 "AgriTech – это и есть сельскохозяйственная технология, также известная как "
@@ -64,7 +64,7 @@ msgstr ""
 "автоматизации. Любая технология, которая сама по себе делает процесс ведения "
 "сельского хозяйства эффективным, называется агротехнологией."
 
-#: base_front/templates/base_front/_about.html:11
+#: base_front/templates/base_front/_about.html:12
 msgid "about_p_2"
 msgstr ""
 "Hub - это централизованная платформа, которая объединяет фермеров, "
@@ -72,7 +72,7 @@ msgstr ""
 "выполняющая функцию координационного центра для обмена знаниями, "
 "предоставления услуг и информации в сфере сельского хозяйства."
 
-#: base_front/templates/base_front/_about.html:12
+#: base_front/templates/base_front/_about.html:13
 msgid "about_p_3"
 msgstr ""
 "AgriTech Hub — это сочетание знаний в области новых технологий и ИКТ с "
@@ -82,6 +82,66 @@ msgstr ""
 "исследовательскими центрами, учреждениями и партнерами — это путь к "
 "эффективным инвестициям, приносящим реальную пользу агропродовольственной "
 "отрасли, а значит — и потребителю."
+
+#: base_front/templates/base_front/_about.html:26
+msgid "about_1_h"
+msgstr "У нас есть знания об информационных технологиях и инвестировании"
+
+#: base_front/templates/base_front/_about.html:27
+msgid "about_1_p"
+msgstr "Мы команда опытных специалистов."
+
+#: base_front/templates/base_front/_about.html:41
+msgid "about_2_h"
+msgstr "Мы коммерциализируем исследования и разработки"
+
+#: base_front/templates/base_front/_about.html:42
+msgid "about_2_p"
+msgstr "Благодаря нам наука и техника могут принести реальную пользу потребителю."
+
+#: base_front/templates/base_front/_about.html:56
+msgid "about_3_h"
+msgstr "Поддерживаем лучшие агротех проекты"
+
+#: base_front/templates/base_front/_about.html:57
+msgid "about_3_p"
+msgstr "От выращивания - через производство и дистрибуцию - к конечному потребителю."
+
+#: base_front/templates/base_front/_about.html:65
+#: base_front/templates/base_front/investment_areas.html:11
+msgid "investment_areas_h"
+msgstr "Инвестиционные направления"
+
+#: base_front/templates/base_front/_about.html:67
+msgid "investment_area_1"
+msgstr "Умные поля — точное земледелие"
+
+#: base_front/templates/base_front/_about.html:68
+msgid "investment_area_2"
+msgstr "Биоматериалы"
+
+#: base_front/templates/base_front/_about.html:69
+msgid "investment_area_3"
+msgstr "Новые сорта растений"
+
+#: base_front/templates/base_front/_about.html:70
+msgid "investment_area_4"
+msgstr "Фудтех"
+
+#: base_front/templates/base_front/_about.html:71
+msgid "investment_area_5"
+msgstr "Биоэнергетика"
+
+#: base_front/templates/base_front/_about.html:79
+#: base_front/templates/base_front/events/list.html:38
+#: base_front/templates/base_front/index.html:76
+#: base_front/templates/base_front/index.html:106
+#: base_front/templates/base_front/index.html:136
+#: base_front/templates/base_front/index.html:166
+#: base_front/templates/base_front/projects/list.html:32
+#: base_front/templates/base_front/projects/list.html:45
+msgid "last_events_more_btn"
+msgstr "Подробнее"
 
 #: base_front/templates/base_front/_footer.html:14
 msgid "our_social_links"
@@ -133,16 +193,6 @@ msgstr ""
 msgid "Y"
 msgstr ""
 
-#: base_front/templates/base_front/events/list.html:38
-#: base_front/templates/base_front/index.html:76
-#: base_front/templates/base_front/index.html:106
-#: base_front/templates/base_front/index.html:136
-#: base_front/templates/base_front/index.html:166
-#: base_front/templates/base_front/projects/list.html:32
-#: base_front/templates/base_front/projects/list.html:45
-msgid "last_events_more_btn"
-msgstr "Подробнее"
-
 #: base_front/templates/base_front/farmer_training.html:12
 msgid "farmer_training_h"
 msgstr "Обучение фермеров"
@@ -186,10 +236,6 @@ msgstr ""
 #: base_front/templates/base_front/index.html:46
 msgid "last_events_title"
 msgstr "Последние события"
-
-#: base_front/templates/base_front/investment_areas.html:11
-msgid "investment_areas_h"
-msgstr "Инвестиционные направления"
 
 #: base_front/templates/base_front/partners/list.html:11
 msgid "agro_partners_h"
