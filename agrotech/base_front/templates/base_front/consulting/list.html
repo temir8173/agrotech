@@ -27,7 +27,9 @@
                     <div class="col-xxl-2 col-lg-3 mt-5 m-15px-tb">
                         <div class="consulting-item">
                             <a href="{% url 'consulting_view' consulting_item.slug %}">
-                                <img src="{{ consulting_item.logo.url }}" title="" alt="">
+                                {% if consulting_item.logo %}
+                                    <img src="{{ consulting_item.logo.url }}" title="" alt="">
+                                {% endif %}
                                 <p>{{ consulting_item.name }}</p>
                             </a>
                         </div>
