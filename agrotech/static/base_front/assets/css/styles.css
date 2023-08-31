@@ -2349,6 +2349,11 @@ img {
   text-transform: uppercase;
 }
 
+#investment-areas table {
+    display: block;
+    overflow-x: auto;
+}
+
 .investment-box {
   padding: 30px;
   margin-bottom: 15px;
