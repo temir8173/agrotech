@@ -2588,3 +2588,19 @@ form.farmer-training textarea {
     justify-content: center;
   }
 }
+
+.custom-alert {
+  position: fixed;
+  top: 100px;
+  right: 50px;
+  z-index: 999;
+}
+
+.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-close {
+  filter: invert(1);
+}

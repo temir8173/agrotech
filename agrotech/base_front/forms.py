@@ -1,5 +1,5 @@
 from django import forms
-from .models import Topic, News, Services, Partners, Consulting
+from .models import Topic, News, Services, Partners, Consulting, TrainingRequests
 from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.fields import RichTextUploadingFormField
 
@@ -40,8 +40,7 @@ class ConsultingForm(forms.ModelForm):
         fields = '__all__'
 
 
-class FarmerTrainingForm(forms.Form):
-    name = forms.CharField()
-    email = forms.EmailField()
-    phone = forms.CharField()
-    message = forms.CharField(label='My Textarea Field', widget=forms.Textarea)
+class FarmerTrainingForm(forms.ModelForm):
+    class Meta:
+        model = TrainingRequests
+        fields = '__all__'

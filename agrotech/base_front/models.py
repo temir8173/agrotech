@@ -35,9 +35,9 @@ class News(models.Model):
 
 
 class ServiceCategories(models.Model):
-    name_kk = models.CharField(max_length=64)
-    name_ru = models.CharField(max_length=64)
-    name_en = models.CharField(max_length=64)
+    name_kk = models.CharField(max_length=255)
+    name_ru = models.CharField(max_length=255)
+    name_en = models.CharField(max_length=255)
     description_kk = models.TextField(max_length=255, null=True, blank=True)
     description_ru = models.TextField(max_length=255, null=True, blank=True)
     description_en = models.TextField(max_length=255, null=True, blank=True)
@@ -51,7 +51,7 @@ class ServiceCategories(models.Model):
 
 class Services(models.Model):
     base_id = models.IntegerField(null=True, blank=True)
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=255)
     locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
     description = models.TextField(max_length=255, null=True, blank=True)
     price = models.CharField(max_length=64)
@@ -82,10 +82,23 @@ class Partners(models.Model):
 class Consulting(models.Model):
     base_id = models.IntegerField(null=True, blank=True)
     name = models.CharField(max_length=255)
-    slug = models.CharField(max_length=64, null=True, blank=True)
+    slug = models.CharField(max_length=255, null=True, blank=True)
     locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
     logo = models.ImageField(upload_to='consulting_logo/', null=True, blank=True)
     description = models.TextField(max_length=1500, null=True, blank=True)
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return self.name
+
+class TrainingRequests(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.CharField(max_length=64)
+    phone = models.CharField(max_length=64)
+    question = models.TextField(max_length=1500, null=True, blank=True)
+    is_answered = models.BooleanField(default=False)
 
     def __repr__(self):
         return self.__str__()

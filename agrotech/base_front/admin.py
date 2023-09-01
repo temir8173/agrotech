@@ -6,8 +6,8 @@ from django.utils.safestring import mark_safe
 from django.db import models
 
 from agrotech.settings import LANGUAGES
-from .forms import TopicForm, NewsForm, ServicesForm, PartnersForm
-from .models import Topic, News, Services, ServiceCategories, Partners, Consulting
+from .forms import TopicForm, NewsForm, ServicesForm, PartnersForm, FarmerTrainingForm
+from .models import Topic, News, Services, ServiceCategories, Partners, Consulting, TrainingRequests
 
 
 class BaseModelAdmin(admin.ModelAdmin):
@@ -197,3 +197,11 @@ class ConsultingAdmin(BaseModelAdmin):
         if len(obj.description) > 100:
             return obj.description[:100] + '...'
         return obj.description
+
+
+@admin.register(TrainingRequests)
+class TrainingRequestsAdmin(admin.ModelAdmin):
+    form = FarmerTrainingForm
+
+    # fields = ('base_id', 'name', 'slug', 'logo', 'locale', 'description')
+    list_display = ['name', 'email', 'phone', 'question', 'is_answered']

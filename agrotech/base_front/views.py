@@ -1,12 +1,15 @@
 from datetime import datetime
 from itertools import groupby
 
+from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from django.core.paginator import Paginator
 from django.db import models
 from django.http import HttpRequest, HttpResponse, Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import translation
+from django.utils.translation import gettext as _
+
 
 from agrotech import settings
 from base_front.forms import FarmerTrainingForm
@@ -159,25 +162,9 @@ def farmer_training(request):
     if request.method == 'POST':
         form = FarmerTrainingForm(request.POST)
         if form.is_valid():
-            print(request.POST)
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
-
-            # Prepare email content
-            subject = 'Обучение фермера'
-            body = f'Name: {name}\nEmail: {email}\nPhone: {email}\nMessage: {message}'
-            sender_email = 'iliyassov95@yandex.kz'  # Replace with your email address
-            recipient_email = 'temir8173@gmail.com'  # Replace with the recipient's email address
-
-            try:
-                send_mail(subject, body, sender_email, [recipient_email])
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-
-            # Handle successful form submission (e.g., redirect to a thank you page)
-            return HttpResponse('Thank you for your message!')
-
+            form.save()
+            messages.success(request, _('training_success_submitted'))
+            form = FarmerTrainingForm()
     else:
         form = FarmerTrainingForm()
 

@@ -2,6 +2,21 @@
 {% load i18n %}
 {% load custom_filters %}
 
+
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="custom-alert alert
+        {% if message.tags %}{{ message.tags }}{% endif %}
+        alert-success alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+
 <!-- Footer -->
 <footer class="text-center text-lg-start text-white">
     <!-- Section: Social media -->

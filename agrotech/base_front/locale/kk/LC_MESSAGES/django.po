@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-29 08:41+0000\n"
+"POT-Creation-Date: 2023-09-01 06:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,77 +87,75 @@ msgstr "Бізде ақпараттық технологиялар және ин
 msgid "about_1_p"
 msgstr "Біз тәжірибелі мамандардан құралған командамыз."
 
-#: base_front/templates/base_front/_about.html:41
+#: base_front/templates/base_front/_about.html:39
 msgid "about_2_h"
 msgstr "Біз зерттеулер мен әзірлемелерді коммерцияландырамыз"
 
-#: base_front/templates/base_front/_about.html:42
+#: base_front/templates/base_front/_about.html:40
 msgid "about_2_p"
-msgstr "Біздің арқасында ғылым мен технология тұтынушыға нақты пайда әкеле алады."
+msgstr ""
+"Біздің арқасында ғылым мен технология тұтынушыға нақты пайда әкеле алады."
 
-#: base_front/templates/base_front/_about.html:56
+#: base_front/templates/base_front/_about.html:52
 msgid "about_3_h"
 msgstr "Біз үздік агротехнологиялық жобаларды қолдаймыз"
 
-#: base_front/templates/base_front/_about.html:57
+#: base_front/templates/base_front/_about.html:53
 msgid "about_3_p"
 msgstr "Өсіруден бастап - өндіру және тарату арқылы - соңғы тұтынушыға дейін."
 
-#: base_front/templates/base_front/_about.html:65
+#: base_front/templates/base_front/_about.html:59
 #: base_front/templates/base_front/investment_areas.html:11
 msgid "investment_areas_h"
 msgstr "Инвестициялау бағыттары"
 
-#: base_front/templates/base_front/_about.html:67
+#: base_front/templates/base_front/_about.html:61
 msgid "investment_area_1"
 msgstr "Ақылды алқаптар – дәл егіншілік"
 
-#: base_front/templates/base_front/_about.html:68
+#: base_front/templates/base_front/_about.html:62
 msgid "investment_area_2"
 msgstr "Биоматериалдар"
 
-#: base_front/templates/base_front/_about.html:69
+#: base_front/templates/base_front/_about.html:63
 msgid "investment_area_3"
 msgstr "Өсімдіктердің жаңа сорттары"
 
-#: base_front/templates/base_front/_about.html:70
+#: base_front/templates/base_front/_about.html:64
 msgid "investment_area_4"
 msgstr "Фудтех"
 
-#: base_front/templates/base_front/_about.html:71
+#: base_front/templates/base_front/_about.html:65
 msgid "investment_area_5"
 msgstr "Биоэнергетика"
 
-#: base_front/templates/base_front/_about.html:79
+#: base_front/templates/base_front/_about.html:68
 #: base_front/templates/base_front/events/list.html:38
 #: base_front/templates/base_front/index.html:76
-#: base_front/templates/base_front/index.html:106
-#: base_front/templates/base_front/index.html:136
-#: base_front/templates/base_front/index.html:166
 #: base_front/templates/base_front/projects/list.html:32
 #: base_front/templates/base_front/projects/list.html:45
 msgid "last_events_more_btn"
 msgstr "Толығырақ"
 
-#: base_front/templates/base_front/_footer.html:14
+#: base_front/templates/base_front/_footer.html:29
 msgid "our_social_links"
 msgstr "Біз әлеуметтік желілерде:"
 
-#: base_front/templates/base_front/_footer.html:48
+#: base_front/templates/base_front/_footer.html:63
 msgid "footer_slogan"
 msgstr ""
 "Agrotech Hub – жобаны жүзеге асыру үшін қолайлы жағдай жасау үшін мемлекет, "
 "бизнес және университет үштік принципінің үйлесімі."
 
-#: base_front/templates/base_front/_footer.html:56
+#: base_front/templates/base_front/_footer.html:71
 msgid "useful_links"
 msgstr "Пайдалы сілтемелер"
 
-#: base_front/templates/base_front/_footer.html:76
+#: base_front/templates/base_front/_footer.html:91
 msgid "contacts"
 msgstr "Байланыс"
 
-#: base_front/templates/base_front/_footer.html:81
+#: base_front/templates/base_front/_footer.html:96
 msgid "footer_address"
 msgstr "Орал, Жәңгір хан 45"
 
@@ -175,17 +173,11 @@ msgstr "Барлық жаңалықтар"
 
 #: base_front/templates/base_front/events/list.html:20
 #: base_front/templates/base_front/index.html:58
-#: base_front/templates/base_front/index.html:88
-#: base_front/templates/base_front/index.html:118
-#: base_front/templates/base_front/index.html:148
 msgid "F"
 msgstr ""
 
 #: base_front/templates/base_front/events/list.html:22
 #: base_front/templates/base_front/index.html:60
-#: base_front/templates/base_front/index.html:90
-#: base_front/templates/base_front/index.html:120
-#: base_front/templates/base_front/index.html:150
 msgid "Y"
 msgstr ""
 
@@ -276,6 +268,10 @@ msgstr ""
 #: base_front/templates/base_front/store/index.html:12
 msgid "store_h"
 msgstr "Магазин"
+
+#: base_front/views.py:166
+msgid "training_success_submitted"
+msgstr "Сіздің өтінішіңіз жіберілді"
 
 #~ msgid "menu_technologies"
 #~ msgstr "Технологиялар"
