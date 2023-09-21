@@ -16,6 +16,7 @@ urlpatterns = [
     path('consulting', views.consulting),
     path('consulting/<str:slug>/', views.consulting_view, name='consulting_view'),
     path('store', views.store),
+    path('courses/<int:category_id>/', views.courses, name='courses'),
 
     path('change-language/<str:language_code>/', views.change_language, name='change_language'),
 ]

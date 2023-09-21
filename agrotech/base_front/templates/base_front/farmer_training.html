@@ -17,6 +17,18 @@
             </div>
         </div>
 
+        <div class="row">
+
+            {% for id, category in categories.items %}
+                <div class="col-lg-6">
+                    <a href="{% url 'courses' category_id=id %}" class="course-category">
+                        {{category.name}}
+                    </a>
+                </div>
+            {% endfor %}
+
+        </div>
+
         <form method="POST" class="farmer-training mt-5">
             {% csrf_token %}
 

@@ -13,7 +13,7 @@ from django.utils.translation import gettext as _
 
 from agrotech import settings
 from base_front.forms import FarmerTrainingForm
-from base_front.models import Topic, News, ServiceCategories, Services, Partners, Consulting
+from base_front.models import Topic, News, ServiceCategories, Services, Partners, Consulting, CourseCategories, Courses
 
 
 def index(request: HttpRequest):
@@ -168,7 +168,19 @@ def farmer_training(request):
     else:
         form = FarmerTrainingForm()
 
-    return render(request, "base_front/farmer_training.html", {'form': form})
+    locale = translation.get_language()
+    course_categories = CourseCategories.objects \
+        .annotate(
+        name=models.F('name_' + locale)
+    ).values('id', 'name').all().filter()
+    categories = {item['id']: item for item in course_categories}
+
+    context = {
+        'form': form,
+        'categories': categories,
+    }
+
+    return render(request, "base_front/farmer_training.html", context)
 
 
 def consulting(request):
@@ -201,3 +213,13 @@ def store(request):
         'agro_projects': 'agro_projects',
     }
     return render(request, "base_front/store/index.html", context)
+
+
+def courses(request, category_id):
+    locale = translation.get_language()
+    courses_objects = Courses.objects.order_by("id").all().filter(category_id=category_id, locale=locale,)
+
+    context = {
+        'courses': courses_objects,
+    }
+    return render(request, "base_front/courses/list.html", context)

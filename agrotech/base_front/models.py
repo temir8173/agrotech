@@ -41,6 +41,7 @@ class ServiceCategories(models.Model):
     description_kk = models.TextField(max_length=255, null=True, blank=True)
     description_ru = models.TextField(max_length=255, null=True, blank=True)
     description_en = models.TextField(max_length=255, null=True, blank=True)
+    contact_phone = models.CharField(max_length=255, default='')
 
     def __repr__(self):
         return self.__str__()
@@ -99,6 +100,32 @@ class TrainingRequests(models.Model):
     phone = models.CharField(max_length=64)
     question = models.TextField(max_length=1500, null=True, blank=True)
     is_answered = models.BooleanField(default=False)
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return self.name
+
+
+class CourseCategories(models.Model):
+    name_kk = models.CharField(max_length=255)
+    name_ru = models.CharField(max_length=255)
+    name_en = models.CharField(max_length=255)
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return self.name_ru
+
+class Courses(models.Model):
+    base_id = models.IntegerField(null=True, blank=True)
+    name = models.CharField(max_length=255)
+    locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
+    description = models.TextField(max_length=10000, null=True, blank=True)
+    category = models.ForeignKey(CourseCategories, on_delete=models.CASCADE, null=True, default=None)
+    price = models.IntegerField(null=True, blank=True)
 
     def __repr__(self):
         return self.__str__()

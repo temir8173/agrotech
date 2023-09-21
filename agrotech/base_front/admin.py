@@ -7,7 +7,8 @@ from django.db import models
 
 from agrotech.settings import LANGUAGES
 from .forms import TopicForm, NewsForm, ServicesForm, PartnersForm, FarmerTrainingForm
-from .models import Topic, News, Services, ServiceCategories, Partners, Consulting, TrainingRequests
+from .models import Topic, News, Services, ServiceCategories, Partners, Consulting, TrainingRequests, Courses, \
+    CourseCategories
 
 
 class BaseModelAdmin(admin.ModelAdmin):
@@ -123,7 +124,7 @@ class ServicesAdmin(BaseModelAdmin):
                 url = (
                     reverse('admin:base_front_services_add')
                     + "?" + urlencode({'base_id': f"{obj.base_id}"})
-                    + "&" + urlencode({'category': f"{obj.category}"})
+                    + "&" + urlencode({'category': f"{obj.category.id}"})
                     + "&" + urlencode({'locale': f"{lang_code}"})
                 )
             links += format_html('<a href="{}">{}</a> ', url, lang_code)
@@ -205,3 +206,35 @@ class TrainingRequestsAdmin(admin.ModelAdmin):
 
     # fields = ('base_id', 'name', 'slug', 'logo', 'locale', 'description')
     list_display = ['name', 'email', 'phone', 'question', 'is_answered']
+
+
+@admin.register(CourseCategories)
+class CourseCategoriesAdmin(admin.ModelAdmin):
+    fields = ('name_kk', 'name_ru', 'name_en')
+    list_display = ['name_kk', 'name_ru', 'name_en']
+
+
+@admin.register(Courses)
+class CoursesAdmin(BaseModelAdmin):
+    fields = ('base_id', 'name', 'locale', 'price', 'category', 'description')
+    list_display = ['name', 'locale', 'translate_links', 'price', 'category', 'description']
+    list_filter = ('locale', )
+    search_fields = ('name__startswith', 'description')
+
+    def translate_links(self, obj):
+        model = Courses
+        translations = self.translate_links_common(obj, model)
+        links = ''
+        for lang_code, translation_id in translations.items():
+            if translation_id:
+                url = reverse('admin:base_front_courses_change', args=(translation_id,))
+            else:
+                url = (
+                    reverse('admin:base_front_courses_add')
+                    + "?" + urlencode({'base_id': f"{obj.base_id}"})
+                    + "&" + urlencode({'category': f"{obj.category.id}"})
+                    + "&" + urlencode({'locale': f"{lang_code}"})
+                )
+            links += format_html('<a href="{}">{}</a> ', url, lang_code)
+
+        return mark_safe(links)
