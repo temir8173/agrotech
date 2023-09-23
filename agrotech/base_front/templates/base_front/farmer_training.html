@@ -21,15 +21,19 @@
 
             {% for id, category in categories.items %}
                 <div class="col-lg-6">
-                    <a href="{% url 'courses' category_id=id %}" class="course-category">
-                        {{category.name}}
+                    <a href="{% url 'courses' category_id=id %}" class="course-cat-card">
+                        <span class="course-category">
+                            {{category.name}}
+                        </span>
                     </a>
                 </div>
             {% endfor %}
 
         </div>
 
-        <form method="POST" class="farmer-training mt-5">
+        <p class="farmer-training-form-h">{% trans "farmer_training_form_header" %}</p>
+
+        <form method="POST" class="farmer-training mt-4">
             {% csrf_token %}
 
             <div class="form-group">

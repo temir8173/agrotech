@@ -219,7 +219,14 @@ def courses(request, category_id):
     locale = translation.get_language()
     courses_objects = Courses.objects.order_by("id").all().filter(category_id=category_id, locale=locale,)
 
+    category_name = get_object_or_404(
+        CourseCategories.objects.filter(id=category_id).annotate(
+            name=models.F('name_' + locale)
+        )
+    )
+
     context = {
         'courses': courses_objects,
+        'category_name': category_name,
     }
     return render(request, "base_front/courses/list.html", context)

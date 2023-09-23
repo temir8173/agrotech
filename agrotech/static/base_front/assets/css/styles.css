@@ -2604,3 +2604,33 @@ form.farmer-training textarea {
 .btn-close {
   filter: invert(1);
 }
+
+.course-cat-card {
+    background-color: #84c556;
+    color: #fff;
+    margin: 0 15px;
+    padding: 50px 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.course-cat-card:hover {
+  color: #fff;
+}
+
+.farmer-training-form-h {
+  font-size: 24px!important;
+  margin-top: 50px;
+}
+
+.course-block {
+  margin: 50px 0;
+}
+
+.course-block p {
+  font-size: 14px!important;
+}
+
+.course-block .course-block-h {
+  font-size: 24px!important;
+}

@@ -5,23 +5,19 @@
 
 {% block body %}
 
-<section id="investment-areas" class="blog-listing section-padding mt-3">
+<section id="investment-areas" class="blog-listing section-padding mt-4">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 mb-4 agr-project-img-box services-img-box">
-                <img src="{% static 'base_front/assets/images/servicessss.jpg' %}" alt="">
-            </div>
-            <h4>{% trans "services_h" %}</h4>
-
-            <p>{% trans "services_p" %}</p>
+            <h4 class="mt-3">{% trans "courses_h" %}</h4>
+            <p>{{ category_name }}</p>
         </div>
         <div class="row align-items-start">
-            <div class="col-lg-12 mt-5 m-15px-tb">
+            <div class="col-lg-12 m-15px-tb">
 
               {% for course in courses %}
-                <div>
-
-                    {{course.name}}
+                <div class="course-block">
+                    <p class="course-block-h">{{course.name}}</p>
+                    <p>{{course.description}}</p>
                 </div>
               {% endfor %}
             </div>
