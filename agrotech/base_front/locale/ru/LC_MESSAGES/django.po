@@ -176,6 +176,9 @@ msgstr "Консалтинг"
 msgid "consulting_p"
 msgstr "Качественный консалтинг - ключ к вашему успеху!"
 
+msgid "consulting_directions"
+msgstr "Мы специализируемся на консультационных услугах в следующих областях:"
+
 #: base_front/templates/base_front/courses/list.html:11
 msgid "courses_h"
 msgstr "Курсы"

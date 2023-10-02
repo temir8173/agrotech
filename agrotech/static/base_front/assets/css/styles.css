@@ -2541,6 +2541,11 @@ form.farmer-training textarea {
   padding: 20px;
   border-radius: 50px;
 }
+
+.consulting_directions {
+  font-size: 21px;
+}
+
 .consulting-item p {
   color: #333;
 }
