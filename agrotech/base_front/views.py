@@ -123,7 +123,7 @@ def project(request, project_id):
     }
     return render(request, "base_front/projects/view.html", context)
 
-def services(request):
+def laboratory(request):
     locale = translation.get_language()
     service_categories = ServiceCategories.objects \
         .annotate(
@@ -139,7 +139,7 @@ def services(request):
         'categories': categories,
         'services_by_category': services_by_category,
     }
-    return render(request, "base_front/services/list.html", context)
+    return render(request, "base_front/laboratory/list.html", context)
 
 def partners(request):
     locale = translation.get_language()

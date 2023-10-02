@@ -435,7 +435,7 @@ header
   font-size: 12px;
   color: #fff;
   position: absolute;
-  right: 5px;
+  right: 2px;
   top: 12px;
 }
 
@@ -464,8 +464,7 @@ div.pagination {
 
 .header-area .main-nav .nav li.has-sub ul.sub-menu {
   position: absolute;
-  width: 200px;
-  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
+  width: 250px;
   overflow: hidden;
   top: 40px;
   opacity: 0;
@@ -473,6 +472,9 @@ div.pagination {
   transform: translateY(+2em);
   visibility: hidden;
   z-index: -1;
+  -webkit-box-shadow: 0px 0px 19px 5px rgba(34, 60, 80, 0.13);
+  -moz-box-shadow: 0px 0px 19px 5px rgba(34, 60, 80, 0.13);
+  box-shadow: 0px 0px 19px 5px rgba(34, 60, 80, 0.13);
 }
 
 .header-area .main-nav .nav li.has-sub ul.sub-menu li {
@@ -487,8 +489,9 @@ div.pagination {
   background: #f7f7f7;
   color: #2a2a2a!important;
   padding-left: 20px;
-  height: 40px;
-  line-height: 40px;
+  padding-right: 20px;
+  height: 60px;
+  line-height: 60px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -2532,35 +2535,26 @@ form.farmer-training textarea {
   padding-top: 10px;
 }
 
-.consulting-item a, .consulting-item span {
-  display: flex;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background-color: #84c556;
-  text-align: center;
-  padding: 25px 20px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 .consulting-item img {
   width: 65px;
-  margin-bottom: 10px;
 }
 .consulting-item p {
-  color: #fff;
+  color: #333;
 }
+
+.consulting_h {
+  margin-bottom: 30px;
+}
+
+.consulting_h p {
+  margin-bottom: 0;
+  margin-left: 30px;
+  font-size: 21px;
+}
+
 @media screen and (min-width: 1400px) {
-  .consulting-item a, .consulting-item span {
-    width: 220px;
-    height: 220px;
-  }
   .consulting-item img {
-    width: 50px;
-  }
-  .consulting-item p {
-    font-size: 14px;
+    width: 100px;
   }
 }
 .consulting-item span img {

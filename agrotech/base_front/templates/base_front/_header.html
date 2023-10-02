@@ -52,19 +52,25 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         {% for url, menu_option in menu_options.items %}
-                        <li class="{% if current_path == url %}current {% endif %}">
-                            <a href="{{url}}">{{menu_option}}</a>
-                        </li>
+                            {% if menu_option.name %}
+                                <li class="has-sub">
+                                    <a href="javascript:void(0)">{{menu_option.name}}</a>
+                                    <ul class="sub-menu">
+                                        {% for url, name in menu_option.items.items %}
+                                            <li class="{% if current_path == url %}current {% endif %}">
+                                                <a href="{{url}}">{{name}}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            {% else %}
+                                <li class="{% if current_path == url %}current {% endif %}">
+                                    <a href="{{url}}">{{menu_option}}</a>
+                                </li>
+                            {% endif %}
                         {% endfor %}
                         {% if 0 %}
-                            <li class="has-sub">
-                                <a href="javascript:void(0)">Өзекті</a>
-                                <ul class="sub-menu">
-                                    <li><a href="meetings.html">Құрм</a></li>
-                                    <li><a href="meeting-details.html">Meeting Details</a></li>
-                                </ul>
-                            </li>
-                        <li class="scroll-to-section active_item"><a href="#courses">Обучение фермеров</a></li>
+                            <li class="scroll-to-section active_item"><a href="#courses">Обучение фермеров</a></li>
                         {% endif %}
                     </ul>
                     <a class="menu-trigger">

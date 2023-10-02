@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-23 19:15+0000\n"
+"POT-Creation-Date: 2023-10-02 05:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,27 +22,31 @@ msgstr ""
 msgid "menu_events"
 msgstr "Жаңалықтар"
 
-#: base_front/context_processors.py:7
-msgid "menu_consulting"
-msgstr "Консалтинг"
-
 #: base_front/context_processors.py:8
 msgid "menu_services"
 msgstr "Қызметтер"
 
-#: base_front/context_processors.py:9
+#: base_front/context_processors.py:10
+msgid "menu_laboratory"
+msgstr "Сараптама және талдау"
+
+#: base_front/context_processors.py:11
+msgid "menu_consulting"
+msgstr "Консалтинг"
+
+#: base_front/context_processors.py:14
 msgid "menu_projects"
 msgstr "Жобалар"
 
-#: base_front/context_processors.py:10
+#: base_front/context_processors.py:15
 msgid "menu_partners"
 msgstr "Серіктестер"
 
-#: base_front/context_processors.py:11
+#: base_front/context_processors.py:16
 msgid "menu_store"
 msgstr "Магазин"
 
-#: base_front/context_processors.py:13
+#: base_front/context_processors.py:18
 msgid "menu_farmer_training"
 msgstr "Фермерлерді оқыту"
 
@@ -265,7 +269,7 @@ msgid "services_h"
 msgstr "Қызметтер"
 
 #: base_front/templates/base_front/services/list.html:16
-msgid "services_p"
+msgid "laboratory_p"
 msgstr ""
 "Зертханалар суға, топыраққа, ауаға, дәнге, жемге талдау жүргізеді, соның "
 "негізінде ұсыныстар мен ұсыныстар береді, сүттің сапасын бағалайды, олардың "
