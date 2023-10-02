@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 05:01+0000\n"
+"POT-Creation-Date: 2023-10-02 07:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,7 @@ msgid "menu_services"
 msgstr "Services"
 
 #: base_front/context_processors.py:10
+#: base_front/templates/base_front/laboratory/list.html:14
 msgid "menu_laboratory"
 msgstr "Expertise and analysis"
 
@@ -173,6 +174,10 @@ msgstr ""
 msgid "consulting_p"
 msgstr ""
 
+#: base_front/templates/base_front/consulting/list.html:14
+msgid "consulting_directions"
+msgstr "We specialize in consulting services in the following areas:"
+
 #: base_front/templates/base_front/courses/list.html:11
 msgid "courses_h"
 msgstr "Courses"
@@ -239,6 +244,23 @@ msgstr ""
 msgid "last_events_title"
 msgstr "Last events"
 
+#: base_front/templates/base_front/laboratory/_list_tab.html:23
+msgid "service_table_name"
+msgstr ""
+
+#: base_front/templates/base_front/laboratory/_list_tab.html:24
+msgid "service_table_price"
+msgstr ""
+
+#: base_front/templates/base_front/laboratory/list.html:16
+msgid "laboratory_p"
+msgstr ""
+"Laboratories carry out analyzes of water, soil, air, grain, feed, based on "
+"the results of which they give recommendations and suggestions, evaluate the "
+"quality of milk, conduct genetic examinations of animals to determine their "
+"origin, create a database of animal breeds using DNA, determine the "
+"stability of the body of animals, birds and fish to diseases."
+
 #: base_front/templates/base_front/partners/list.html:11
 #, fuzzy
 #| msgid "agro_project_h"
@@ -261,27 +283,6 @@ msgstr "Projects"
 msgid "agro_project_p"
 msgstr "Projects"
 
-#: base_front/templates/base_front/services/_list_tab.html:23
-msgid "service_table_name"
-msgstr ""
-
-#: base_front/templates/base_front/services/_list_tab.html:24
-msgid "service_table_price"
-msgstr ""
-
-#: base_front/templates/base_front/services/list.html:14
-#, fuzzy
-#| msgid "menu_services"
-msgid "services_h"
-msgstr "Services"
-
-#: base_front/templates/base_front/services/list.html:16
-msgid "laboratory_p"
-msgstr "Laboratories carry out analyzes of water, soil, air, grain, feed, based on the results of which they give"
-" recommendations and suggestions, evaluate the quality of milk, conduct genetic examinations of animals to"
-" determine their origin, create a database of animal breeds using DNA, determine the stability of the body"
-" of animals, birds and fish to diseases."
-
 #: base_front/templates/base_front/store/index.html:12
 msgid "store_h"
 msgstr ""
@@ -289,6 +290,11 @@ msgstr ""
 #: base_front/views.py:166
 msgid "training_success_submitted"
 msgstr ""
+
+#, fuzzy
+#~| msgid "menu_services"
+#~ msgid "services_h"
+#~ msgstr "Services"
 
 #~ msgid "menu_technologies"
 #~ msgstr "Technologies"

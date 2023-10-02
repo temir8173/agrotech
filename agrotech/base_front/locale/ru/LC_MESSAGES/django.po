@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 05:01+0000\n"
+"POT-Creation-Date: 2023-10-02 07:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,7 @@ msgid "menu_services"
 msgstr "Услуги"
 
 #: base_front/context_processors.py:10
+#: base_front/templates/base_front/laboratory/list.html:14
 msgid "menu_laboratory"
 msgstr "Экспертиза и анализ"
 
@@ -176,6 +177,7 @@ msgstr "Консалтинг"
 msgid "consulting_p"
 msgstr "Качественный консалтинг - ключ к вашему успеху!"
 
+#: base_front/templates/base_front/consulting/list.html:14
 msgid "consulting_directions"
 msgstr "Мы специализируемся на консультационных услугах в следующих областях:"
 
@@ -245,6 +247,23 @@ msgstr ""
 msgid "last_events_title"
 msgstr "Последние события"
 
+#: base_front/templates/base_front/laboratory/_list_tab.html:23
+msgid "service_table_name"
+msgstr "Определяемые характеристики (показатели) услуги, продукции"
+
+#: base_front/templates/base_front/laboratory/_list_tab.html:24
+msgid "service_table_price"
+msgstr "Стоимость за 1 образец, тенге"
+
+#: base_front/templates/base_front/laboratory/list.html:16
+msgid "laboratory_p"
+msgstr ""
+"Лаборатории осуществляют анализы воды, почвы, воздуха, зерна, кормов, по "
+"результатам которых, дают рекомендации и предложения, оценивают качества "
+"молока, проводят генетические экспертизы животных с определением их "
+"происхождения, создают базу данных пород животных по ДНК, определяют "
+"устойчивость организма животных, птиц и рыб к заболеваниям."
+
 #: base_front/templates/base_front/partners/list.html:11
 msgid "agro_partners_h"
 msgstr "Партнеры"
@@ -263,27 +282,6 @@ msgstr ""
 "Мы стремимся создать благоприятную среду для успешных проектов, где ваши "
 "идеи превращаются в реальность."
 
-#: base_front/templates/base_front/services/_list_tab.html:23
-msgid "service_table_name"
-msgstr "Определяемые характеристики (показатели) услуги, продукции"
-
-#: base_front/templates/base_front/services/_list_tab.html:24
-msgid "service_table_price"
-msgstr "Стоимость за 1 образец, тенге"
-
-#: base_front/templates/base_front/services/list.html:14
-msgid "services_h"
-msgstr "Услуги"
-
-#: base_front/templates/base_front/services/list.html:16
-msgid "laboratory_p"
-msgstr ""
-"Лаборатории осуществляют анализы воды, почвы, воздуха, зерна, кормов, по "
-"результатам которых, дают рекомендации и предложения, оценивают качества "
-"молока, проводят генетические экспертизы животных с определением их "
-"происхождения, создают базу данных пород животных по ДНК, определяют "
-"устойчивость организма животных, птиц и рыб к заболеваниям."
-
 #: base_front/templates/base_front/store/index.html:12
 msgid "store_h"
 msgstr "Магазин"
@@ -291,6 +289,9 @@ msgstr "Магазин"
 #: base_front/views.py:166
 msgid "training_success_submitted"
 msgstr "Ваш запрос был отправлен"
+
+#~ msgid "services_h"
+#~ msgstr "Услуги"
 
 #~ msgid "banner_preheader"
 #~ msgstr "Офисный проект"

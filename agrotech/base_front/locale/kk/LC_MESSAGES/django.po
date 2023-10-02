@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 05:01+0000\n"
+"POT-Creation-Date: 2023-10-02 07:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,7 @@ msgid "menu_services"
 msgstr "Қызметтер"
 
 #: base_front/context_processors.py:10
+#: base_front/templates/base_front/laboratory/list.html:14
 msgid "menu_laboratory"
 msgstr "Сараптама және талдау"
 
@@ -171,6 +172,10 @@ msgstr "КОНСАЛТИНГ"
 msgid "consulting_p"
 msgstr "Сапалы кеңес беру - сіздің табысыңыздың кілті!"
 
+#: base_front/templates/base_front/consulting/list.html:14
+msgid "consulting_directions"
+msgstr "Біз келесі бағыттар бойынша консалтингтік қызметтерге маманданамыз:"
+
 #: base_front/templates/base_front/courses/list.html:11
 msgid "courses_h"
 msgstr "Курстар"
@@ -236,6 +241,23 @@ msgstr ""
 msgid "last_events_title"
 msgstr "Соңғы жаңалықтар"
 
+#: base_front/templates/base_front/laboratory/_list_tab.html:23
+msgid "service_table_name"
+msgstr "Қызметтердің, өнімнің анықталған сипаттамалары (көрсеткіштері)."
+
+#: base_front/templates/base_front/laboratory/_list_tab.html:24
+msgid "service_table_price"
+msgstr "1 үлгінің құны, теңге"
+
+#: base_front/templates/base_front/laboratory/list.html:16
+msgid "laboratory_p"
+msgstr ""
+"Зертханалар суға, топыраққа, ауаға, дәнге, жемге талдау жүргізеді, соның "
+"негізінде ұсыныстар мен ұсыныстар береді, сүттің сапасын бағалайды, олардың "
+"шығу тегін анықтау үшін жануарларға генетикалық сараптама жүргізеді, ДНҚ "
+"бойынша мал тұқымдарының деректер базасын жасайды, жануарлардың тұқымдарын "
+"анықтайды. жануарлар, құстар мен балықтар организмінің ауруларға төзімділігі."
+
 #: base_front/templates/base_front/partners/list.html:11
 msgid "agro_partners_h"
 msgstr "Серіктестер"
@@ -256,27 +278,6 @@ msgstr ""
 "Біз сіздің идеяларыңыз шындыққа айналатын табысты жобалар үшін қолайлы "
 "жағдай жасауға ұмтыламыз."
 
-#: base_front/templates/base_front/services/_list_tab.html:23
-msgid "service_table_name"
-msgstr "Қызметтердің, өнімнің анықталған сипаттамалары (көрсеткіштері)."
-
-#: base_front/templates/base_front/services/_list_tab.html:24
-msgid "service_table_price"
-msgstr "1 үлгінің құны, теңге"
-
-#: base_front/templates/base_front/services/list.html:14
-msgid "services_h"
-msgstr "Қызметтер"
-
-#: base_front/templates/base_front/services/list.html:16
-msgid "laboratory_p"
-msgstr ""
-"Зертханалар суға, топыраққа, ауаға, дәнге, жемге талдау жүргізеді, соның "
-"негізінде ұсыныстар мен ұсыныстар береді, сүттің сапасын бағалайды, олардың "
-"шығу тегін анықтау үшін жануарларға генетикалық сараптама жүргізеді, ДНҚ "
-"бойынша мал тұқымдарының деректер базасын жасайды, жануарлардың тұқымдарын "
-"анықтайды. жануарлар, құстар мен балықтар организмінің ауруларға төзімділігі."
-
 #: base_front/templates/base_front/store/index.html:12
 msgid "store_h"
 msgstr "Магазин"
@@ -284,6 +285,9 @@ msgstr "Магазин"
 #: base_front/views.py:166
 msgid "training_success_submitted"
 msgstr "Сіздің өтінішіңіз жіберілді"
+
+#~ msgid "services_h"
+#~ msgstr "Қызметтер"
 
 #~ msgid "menu_technologies"
 #~ msgstr "Технологиялар"
