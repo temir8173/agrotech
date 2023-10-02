@@ -185,7 +185,7 @@ def farmer_training(request):
 
 def consulting(request):
     locale = translation.get_language()
-    consulting_items = Consulting.objects.all().filter(locale=locale)
+    consulting_items = Consulting.objects.all().filter(locale=locale).order_by('name')
 
     context = {
         'consulting_items': consulting_items,
