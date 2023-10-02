@@ -13,7 +13,8 @@ from django.utils.translation import gettext as _
 
 from agrotech import settings
 from base_front.forms import FarmerTrainingForm
-from base_front.models import Topic, News, ServiceCategories, Services, Partners, Consulting, CourseCategories, Courses
+from base_front.models import Topic, News, ServiceCategories, Services, Partners, Consulting, CourseCategories, Courses, \
+    ProductCategories, ProductSeller, Products
 
 
 def index(request: HttpRequest):
@@ -208,9 +209,33 @@ def consulting_view(request, slug):
 
 def store(request):
     locale = translation.get_language()
+    product_sellers = ProductSeller.objects \
+        .annotate(
+        name=models.F('name_' + locale),
+    ).values('id', 'name', 'contact_phone').all().filter()
+    sellers = {item['id']: item for item in product_sellers}
+
+    product_categories = ProductCategories.objects \
+        .annotate(
+        name=models.F('name_' + locale),
+    ).values('id', 'name').all().filter()
+    categories = {item['id']: item for item in product_categories}
+
+    products = Products.objects.order_by("id").all().filter(locale=locale,)
+    products_by_seller = {
+        seller_id: list(items) for seller_id, items in groupby(products, key=lambda x: x.seller_id)
+    }
+    for seller_id, seller_products in products_by_seller.items():
+        seller_products.sort(key=lambda x: x.category)
+        seller_products_by_category = {
+            category_id: list(items) for category_id, items in groupby(seller_products, key=lambda x: x.category_id)
+        }
+        products_by_seller[seller_id] = seller_products_by_category
 
     context = {
-        'agro_projects': 'agro_projects',
+        'sellers': sellers,
+        'categories': categories,
+        'products_by_seller': products_by_seller,
     }
     return render(request, "base_front/store/index.html", context)
 

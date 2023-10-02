@@ -2,18 +2,55 @@
 
 {% load static %}
 {% load i18n %}
+{% load custom_filters %}
 
 {% block body %}
 
 <section id="investment-areas" class="blog-listing section-padding mt-3 projects">
     <div class="container">
         <div class="row mt-4 mb-5">
-            <div class="col-lg-6 mt-3 ">
+            <div class="col-lg-6 mt-3 d-flex flex-column justify-content-evenly">
                 <h4 class="mt-4">{% trans "store_h" %}</h4>
+                <p>{% trans "store_p" %}</p>
             </div>
             <div class="col-lg-4 mb-4 ">
                 <img width="200" src="{% static 'base_front/assets/images/agro-pie.png' %}" alt="">
             </div>
+        </div>
+        <div class="row">
+            {% for seller_id, products_by_category in products_by_seller.items %}
+                <div class="seller_products services-tab">
+                    <p class="seller_name">
+                        {{ sellers|get_value:seller_id|get_value:'name' }}
+                    </p>
+                    {% for category_id, products in products_by_category.items %}
+                        <p class="product_category_name">
+                            {{ categories|get_value:category_id|get_value:'name' }}
+                        </p>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">{{ products.0.name_label }}</th>
+                                    {% if products.0.variety %}<th scope="col">{{ products.0.variety_label }}</th>{% endif %}
+                                    {% if products.0.reproduction %}<th scope="col">{{ products.0.reproduction_label }}</th>{% endif %}
+                                    <th width="20%"  scope="col">{{ products.0.price_label }} за 1 тонну, тг.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for product in products %}
+                                    <tr>
+                                        <td>{{ product.name }}</td>
+                                        {% if products.0.variety %}<td>{{ product.variety }}</td>{% endif %}
+                                        {% if products.0.reproduction %}<td>{{ product.reproduction }}</td>{% endif %}
+                                        <td>{{ product.price }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endfor %}
+                    <p class="seller_contacts">{% trans "seller_contact" %}: {{ sellers|get_value:seller_id|get_value:'contact_phone' }}</p>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>

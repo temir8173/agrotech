@@ -433,10 +433,13 @@ header
   font-family: FontAwesome;
   content: "\f107";
   font-size: 12px;
-  color: #fff;
+  color: #333;
   position: absolute;
   right: 2px;
   top: 12px;
+}
+.header-area.main-page .main-nav .nav li.has-sub:after {
+  color: #fff;
 }
 
 .background-header .main-nav .nav li.has-sub:after {
@@ -475,6 +478,7 @@ div.pagination {
   -webkit-box-shadow: 0px 0px 19px 5px rgba(34, 60, 80, 0.13);
   -moz-box-shadow: 0px 0px 19px 5px rgba(34, 60, 80, 0.13);
   box-shadow: 0px 0px 19px 5px rgba(34, 60, 80, 0.13);
+  border-radius: 7px;
 }
 
 .header-area .main-nav .nav li.has-sub ul.sub-menu li {
@@ -2551,7 +2555,7 @@ form.farmer-training textarea {
 }
 
 .consulting_h {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .consulting_h p {
@@ -2635,4 +2639,26 @@ form.farmer-training textarea {
 
 .course-block .course-block-h {
   font-size: 24px!important;
+}
+
+.seller_name {
+  font-size: 32px!important;
+}
+
+.product_category_name {
+  font-size: 21px!important;
+}
+
+.seller_products.services-tab .table thead th {
+  font-size: 18px;
+  padding: 20px;
+}
+
+.seller_products.services-tab .table tbody td {
+  font-size: 14px;
+  padding: 15px;
+}
+
+.seller_products {
+  margin-top: 50px;
 }

@@ -8,7 +8,7 @@ from django.db import models
 from agrotech.settings import LANGUAGES
 from .forms import TopicForm, NewsForm, ServicesForm, PartnersForm, FarmerTrainingForm
 from .models import Topic, News, Services, ServiceCategories, Partners, Consulting, TrainingRequests, Courses, \
-    CourseCategories
+    CourseCategories, ProductCategories, ProductSeller, Products
 
 
 class BaseModelAdmin(admin.ModelAdmin):
@@ -233,6 +233,46 @@ class CoursesAdmin(BaseModelAdmin):
                     reverse('admin:base_front_courses_add')
                     + "?" + urlencode({'base_id': f"{obj.base_id}"})
                     + "&" + urlencode({'category': f"{obj.category.id}"})
+                    + "&" + urlencode({'locale': f"{lang_code}"})
+                )
+            links += format_html('<a href="{}">{}</a> ', url, lang_code)
+
+        return mark_safe(links)
+
+
+@admin.register(ProductCategories)
+class ProductCategoriesAdmin(admin.ModelAdmin):
+    fields = ('name_kk', 'name_ru', 'name_en')
+    list_display = ['name_kk', 'name_ru', 'name_en']
+
+
+@admin.register(ProductSeller)
+class ProductSellerAdmin(admin.ModelAdmin):
+    fields = ('name_kk', 'name_ru', 'name_en', 'contact_phone')
+    list_display = ['name_kk', 'name_ru', 'name_en', 'contact_phone']
+
+
+@admin.register(Products)
+class ProductsAdmin(BaseModelAdmin):
+    fields = ('base_id', 'name', 'locale', 'variety', 'reproduction', 'price', 'category', 'seller')
+    list_display = ['name', 'locale', 'variety', 'reproduction', 'translate_links', 'price', 'category']
+    list_filter = ('locale', )
+    search_fields = ('name__startswith', 'description')
+
+    def translate_links(self, obj):
+        model = Products
+        translations = self.translate_links_common(obj, model)
+        links = ''
+        for lang_code, translation_id in translations.items():
+            if translation_id:
+                url = reverse('admin:base_front_products_change', args=(translation_id,))
+            else:
+                url = (
+                    reverse('admin:base_front_products_add')
+                    + "?" + urlencode({'base_id': f"{obj.base_id}"})
+                    + "&" + urlencode({'category': f"{obj.category.id}"})
+                    + "&" + urlencode({'seller': f"{obj.seller.id}"})
+                    + "&" + urlencode({'price': f"{obj.price}"})
                     + "&" + urlencode({'locale': f"{lang_code}"})
                 )
             links += format_html('<a href="{}">{}</a> ', url, lang_code)

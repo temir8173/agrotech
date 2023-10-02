@@ -41,7 +41,7 @@ class ServiceCategories(models.Model):
     description_kk = models.TextField(max_length=255, null=True, blank=True)
     description_ru = models.TextField(max_length=255, null=True, blank=True)
     description_en = models.TextField(max_length=255, null=True, blank=True)
-    contact_phone = models.CharField(max_length=255, default='')
+    contact_phone = models.CharField(max_length=255, null=True, default='')
 
     def __repr__(self):
         return self.__str__()
@@ -132,3 +132,67 @@ class Courses(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProductCategories(models.Model):
+    name_kk = models.CharField(max_length=255)
+    name_ru = models.CharField(max_length=255)
+    name_en = models.CharField(max_length=255)
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return self.name_ru
+
+
+class ProductSeller(models.Model):
+    name_kk = models.CharField(max_length=255)
+    name_ru = models.CharField(max_length=255)
+    name_en = models.CharField(max_length=255)
+    contact_phone = models.CharField(max_length=255, null=True, default='')
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return self.name_ru
+
+
+class Products(models.Model):
+    base_id = models.IntegerField(null=True, blank=True)
+    name = models.CharField(max_length=255, verbose_name=_('product_name_label'))
+    locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
+    variety = models.TextField(max_length=255, null=True, blank=True, verbose_name=_('product_variety_label'))
+    reproduction = models.TextField(max_length=255, null=True, blank=True, verbose_name=_('product_reproduction_label'))
+    price = models.CharField(max_length=64, verbose_name=_('product_price_label'))
+    category = models.ForeignKey(ProductCategories, on_delete=models.CASCADE, null=True, default=None)
+    seller = models.ForeignKey(ProductSeller, on_delete=models.CASCADE, null=True, default=None)
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return self.name
+
+    def __get_label(self, field):
+        return self._meta.get_field(field).verbose_name
+
+    def __get_help_text(self, field):
+        return self._meta.get_field(field).help_text
+
+    @property
+    def name_label(self):
+        return _('product_name_label')
+
+    @property
+    def variety_label(self):
+        return _('product_variety_label')
+
+    @property
+    def reproduction_label(self):
+        return _('product_reproduction_label')
+
+    @property
+    def price_label(self):
+        return _('product_price_label')
