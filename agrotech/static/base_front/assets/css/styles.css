@@ -2543,7 +2543,7 @@ form.farmer-training textarea {
 }
 
 .consulting_directions {
-  font-size: 21px;
+  font-size: 21px!important;
 }
 
 .consulting-item p {
