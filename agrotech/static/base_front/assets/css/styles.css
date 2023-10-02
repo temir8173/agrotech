@@ -2536,7 +2536,10 @@ form.farmer-training textarea {
 }
 
 .consulting-item img {
-  width: 65px;
+  width: 75px;
+  background-color: #cd7287;
+  padding: 20px;
+  border-radius: 50px;
 }
 .consulting-item p {
   color: #333;
