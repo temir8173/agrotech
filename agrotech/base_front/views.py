@@ -226,7 +226,6 @@ def store(request):
         seller_id: list(items) for seller_id, items in groupby(products, key=lambda x: x.seller_id)
     }
     for seller_id, seller_products in products_by_seller.items():
-        seller_products.sort(key=lambda x: x.category)
         seller_products_by_category = {
             category_id: list(items) for category_id, items in groupby(seller_products, key=lambda x: x.category_id)
         }
