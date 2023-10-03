@@ -161,11 +161,11 @@ class ProductSeller(models.Model):
 
 class Products(models.Model):
     base_id = models.IntegerField(null=True, blank=True)
-    name = models.CharField(max_length=255, verbose_name=_('product_name_label'))
+    name = models.CharField(max_length=255)
     locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
-    variety = models.TextField(max_length=255, null=True, blank=True, verbose_name=_('product_variety_label'))
-    reproduction = models.TextField(max_length=255, null=True, blank=True, verbose_name=_('product_reproduction_label'))
-    price = models.CharField(max_length=64, verbose_name=_('product_price_label'))
+    variety = models.CharField(max_length=255, null=True, blank=True)
+    reproduction = models.CharField(max_length=255, null=True, blank=True)
+    price = models.CharField(max_length=64)
     category = models.ForeignKey(ProductCategories, on_delete=models.CASCADE, null=True, default=None)
     seller = models.ForeignKey(ProductSeller, on_delete=models.CASCADE, null=True, default=None)
 
