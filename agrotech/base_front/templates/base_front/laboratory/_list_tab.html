@@ -14,7 +14,7 @@
 
 <div class="tab-content">
 
-  {% for id, categories in categories.items %}
+  {% for id, category in categories.items %}
     <div class="services-tab tab-pane {% if forloop.first %} active {% endif %}"
          id="service-cat-{{id}}" role="tabpanel" aria-labelledby="service-cat-{{id}}-tab">
       <table class="table table-striped table-bordered mt-5">
@@ -33,7 +33,7 @@
                   <td>{{ service.name }}</td>
                   <td>{{ service.price }}<br>{{ service.description }}</td>
                   <td>
-                    <a target="_blank" href="https://api.whatsapp.com/send?phone=77078758173&text={{ service.name }}">
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone={{ category.contact_phone|default:'77078758173' }}&text={{ service.name }}">
                     Whatsapp</a>
                   </td>
                 </tr>

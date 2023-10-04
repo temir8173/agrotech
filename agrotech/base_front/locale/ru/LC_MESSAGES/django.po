@@ -183,7 +183,7 @@ msgstr "Контакты"
 
 #: base_front/templates/base_front/_footer.html:96
 msgid "footer_address"
-msgstr "Уральск, ул. Жангир хана 43"
+msgstr "Уральск, ул. Жангир хана 45"
 
 #: base_front/templates/base_front/consulting/list.html:12
 msgid "consulting_h"

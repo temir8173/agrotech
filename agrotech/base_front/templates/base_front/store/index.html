@@ -33,7 +33,8 @@
                                     <th scope="col">{{ products.0.name_label }}</th>
                                     {% if products.0.variety %}<th scope="col">{{ products.0.variety_label }}</th>{% endif %}
                                     {% if products.0.reproduction %}<th scope="col">{{ products.0.reproduction_label }}</th>{% endif %}
-                                    <th width="20%"  scope="col">{{ products.0.price_label }} за 1 тонну, тг.</th>
+                                    <th width="20%"  scope="col">*{{ products.0.price_label }} за 1 тонну, тг.</th>
+                                    <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,14 +44,19 @@
                                         {% if products.0.variety %}<td>{{ product.variety }}</td>{% endif %}
                                         {% if products.0.reproduction %}<td>{{ product.reproduction }}</td>{% endif %}
                                         <td>{{ product.price }}</td>
+                                        <td>
+                                            <a target="_blank"
+                                               href="https://api.whatsapp.com/send?phone={{ sellers|get_value:seller_id|get_value:'contact_phone'|default:'77078758173' }}&text={{ product.name }}">
+                                            Whatsapp</a>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
                     {% endfor %}
-                    <p class="seller_contacts">{% trans "seller_contact" %}: {{ sellers|get_value:seller_id|get_value:'contact_phone' }}</p>
                 </div>
             {% endfor %}
+            <p class="seller_contacts">*Цены могут менятся, для уточнения свяжитесь с продавцом</p>
         </div>
     </div>
 </section>

@@ -134,8 +134,8 @@ class ServicesAdmin(BaseModelAdmin):
 
 @admin.register(ServiceCategories)
 class ServiceCategoriesAdmin(admin.ModelAdmin):
-    fields = ('name_kk', 'name_ru', 'name_en', 'description_kk', 'description_ru', 'description_en')
-    list_display = ['name_kk', 'name_ru', 'name_en', 'description_kk', 'description_ru', 'description_en']
+    fields = ('name_kk', 'name_ru', 'name_en', 'contact_phone', 'description_kk', 'description_ru', 'description_en')
+    list_display = ['name_kk', 'name_ru', 'name_en', 'contact_phone', 'description_kk', 'description_ru', 'description_en']
 
 
 @admin.register(Partners)
