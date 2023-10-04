@@ -23,8 +23,17 @@ class Topic(models.Model):
 
 
 class News(models.Model):
+    TYPES = [
+        ('event', 'Event'),
+        ('new', 'New'),
+    ]
     base_id = models.IntegerField(null=True, blank=True)
     title = models.CharField(max_length=255)
+    type = models.CharField(
+        max_length=10,
+        choices=TYPES,
+        default='event'
+    )
     content = models.TextField()
     publication_date = models.DateField()
     image = models.ImageField(upload_to='news_images/')

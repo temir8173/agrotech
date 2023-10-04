@@ -460,9 +460,16 @@ div.pagination {
   color: #999;
 }
 
+.event_section .container {
+  max-width: 960px;
+}
+
 .event_img_box {
-  max-width: 500px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+}
+
+.news_content img {
+  max-width: 400px;
 }
 
 .header-area .main-nav .nav li.has-sub ul.sub-menu {
@@ -2044,12 +2051,13 @@ img.scale-with-grid {
 /* Blog
 ---------------------*/
 .blog-grid {
-  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
   border-radius: 5px;
-  overflow: hidden;
   background: #ffffff;
   margin-top: 15px;
   margin-bottom: 15px;
+  -webkit-box-shadow: 0px 0px 19px 5px rgba(34, 60, 80, 0.14);
+  -moz-box-shadow: 0px 0px 19px 5px rgba(34, 60, 80, 0.14);
+  box-shadow: 0px 0px 19px 5px rgba(34, 60, 80, 0.14);
 }
 .blog-grid .blog-img {
   position: relative;

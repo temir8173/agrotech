@@ -17,7 +17,7 @@
             <div class="event_img_box">
                 <img src="{{ event_obj.image.url }}" alt="" width="200">
             </div>
-            <span>
+            <span class="news_content">
                 {% autoescape off %}
                     {{ event_obj.content }}
                 {% endautoescape %}
