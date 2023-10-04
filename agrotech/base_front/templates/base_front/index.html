@@ -70,7 +70,7 @@
                             </div>
                             <div class="blog-info">
                                 <h5><a href="{% url 'event_view' event.id %}">{{ event.title }}</a></h5>
-                                <p>{{ event.content|striptags|slice:":100" }}...</p>
+                                <p>{{ event.content|safe|striptags|slice:":100" }}...</p>
                                 <div class="btn-bar">
                                     <a href="{% url 'event_view' event.id %}" class="px-btn-arrow">
                                         <span>{% trans "last_events_more_btn" %}</span>
