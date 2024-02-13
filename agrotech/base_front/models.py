@@ -38,6 +38,7 @@ class News(models.Model):
     publication_date = models.DateField()
     image = models.ImageField(upload_to='news_images/')
     locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
+    views = models.IntegerField(null=True, blank=True, default=1)
 
     class Meta:
         verbose_name_plural = "News"

@@ -1,11 +1,11 @@
 from datetime import datetime
+from hashlib import md5
 from itertools import groupby
 
 from django.contrib import messages
-from django.core.mail import send_mail, BadHeaderError
 from django.core.paginator import Paginator
 from django.db import models
-from django.http import HttpRequest, HttpResponse, Http404
+from django.http import HttpRequest, Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import translation
 from django.utils.translation import gettext as _
@@ -15,6 +15,7 @@ from agrotech import settings
 from base_front.forms import FarmerTrainingForm
 from base_front.models import Topic, News, ServiceCategories, Services, Partners, Consulting, CourseCategories, Courses, \
     ProductCategories, ProductSeller, Products
+from base_front.utils import track_visitor
 
 
 def index(request: HttpRequest):
@@ -77,6 +78,7 @@ def event_view(request, event_id):
 
     try:
         event_obj = News.objects.get(id=event_id)
+
     except models.ObjectDoesNotExist:
         raise Http404()
 
@@ -87,10 +89,19 @@ def event_view(request, event_id):
             raise Http404()
         return redirect('event_view', event_id=event_obj_translation.id)
 
+    ip_address = request.META.get('REMOTE_ADDR', '')  # Get the visitor's IP address
+    user_agent = request.META.get('HTTP_USER_AGENT', '')  # Get the visitor's user-agent string
+    combined_string = ip_address + user_agent
+    unique_visitor_id = md5(combined_string.encode()).hexdigest()
+    if track_visitor(unique_visitor_id):
+        event_obj.views += 1
+        event_obj.save()
+
     context = {
         'event_obj': event_obj,
     }
     return render(request, "base_front/events/view.html", context)
+
 
 def projects(request):
     locale = translation.get_language()
@@ -104,6 +115,7 @@ def projects(request):
         'agro_projects': agro_projects,
     }
     return render(request, "base_front/projects/list.html", context)
+
 
 def project(request, project_id):
     locale = translation.get_language()
@@ -124,6 +136,7 @@ def project(request, project_id):
     }
     return render(request, "base_front/projects/view.html", context)
 
+
 def laboratory(request):
     locale = translation.get_language()
     service_categories = ServiceCategories.objects \
@@ -142,6 +155,7 @@ def laboratory(request):
     }
     return render(request, "base_front/laboratory/list.html", context)
 
+
 def partners(request):
     locale = translation.get_language()
     partners_list = Partners.objects.order_by("id").all().filter(locale=locale)
@@ -151,6 +165,7 @@ def partners(request):
     }
     return render(request, "base_front/partners/list.html", context)
 
+
 def partner(request, partner_id):
     agro_partner = get_object_or_404(Partners, id=partner_id)
 
@@ -158,6 +173,7 @@ def partner(request, partner_id):
         'partner': agro_partner,
     }
     return render(request, "base_front/partners/view.html", context)
+
 
 def farmer_training(request):
     if request.method == 'POST':

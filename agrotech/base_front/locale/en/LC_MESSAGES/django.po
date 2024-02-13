@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 15:01+0000\n"
+"POT-Creation-Date: 2024-02-13 10:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,19 +51,19 @@ msgstr "Store"
 msgid "menu_farmer_training"
 msgstr "Farmer training"
 
-#: base_front/models.py:164 base_front/models.py:186
+#: base_front/models.py:196
 msgid "product_name_label"
 msgstr "Name"
 
-#: base_front/models.py:166 base_front/models.py:190
+#: base_front/models.py:200
 msgid "product_variety_label"
 msgstr "Variety"
 
-#: base_front/models.py:167 base_front/models.py:194
+#: base_front/models.py:204
 msgid "product_reproduction_label"
 msgstr "Reproduction"
 
-#: base_front/models.py:168 base_front/models.py:198
+#: base_front/models.py:208
 msgid "product_price_label"
 msgstr "Price"
 
@@ -212,6 +212,10 @@ msgstr ""
 msgid "Y"
 msgstr ""
 
+#: base_front/templates/base_front/events/view.html:14
+msgid "Views"
+msgstr "Views"
+
 #: base_front/templates/base_front/farmer_training.html:12
 #, fuzzy
 #| msgid "menu_farmer_training"
@@ -307,13 +311,12 @@ msgstr "Store"
 msgid "store_p"
 msgstr "In our store you will find a variety of agricultural products."
 
-#: base_front/templates/base_front/store/index.html:51
-msgid "seller_contact"
-msgstr "Contacts"
-
-#: base_front/views.py:167
+#: base_front/views.py:183
 msgid "training_success_submitted"
 msgstr ""
+
+#~ msgid "seller_contact"
+#~ msgstr "Contacts"
 
 #, fuzzy
 #~| msgid "menu_services"
