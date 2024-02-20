@@ -4,11 +4,12 @@ from django.utils.html import format_html
 from django.utils.http import urlencode
 from django.utils.safestring import mark_safe
 from django.db import models
+from modeltranslation.admin import TranslationAdmin
 
 from agrotech.settings import LANGUAGES
 from .forms import TopicForm, NewsForm, ServicesForm, PartnersForm, FarmerTrainingForm
 from .models import Topic, News, Services, ServiceCategories, Partners, Consulting, TrainingRequests, Courses, \
-    CourseCategories, ProductCategories, ProductSeller, Products
+    CourseCategories, ProductCategories, ProductSeller, Products, Department
 
 
 class BaseModelAdmin(admin.ModelAdmin):
@@ -134,8 +135,8 @@ class ServicesAdmin(BaseModelAdmin):
 
 @admin.register(ServiceCategories)
 class ServiceCategoriesAdmin(admin.ModelAdmin):
-    fields = ('name_kk', 'name_ru', 'name_en', 'contact_phone', 'description_kk', 'description_ru', 'description_en')
-    list_display = ['name_kk', 'name_ru', 'name_en', 'contact_phone', 'description_kk', 'description_ru', 'description_en']
+    fields = ('name_kk', 'name_ru', 'name_en', 'contact_phone', 'description_kk', 'description_ru', 'description_en', 'department')
+    list_display = ['name_kk', 'name_ru', 'name_en', 'contact_phone', 'description_kk', 'description_ru', 'description_en', 'department']
 
 
 @admin.register(Partners)
@@ -278,3 +279,10 @@ class ProductsAdmin(BaseModelAdmin):
             links += format_html('<a href="{}">{}</a> ', url, lang_code)
 
         return mark_safe(links)
+
+
+@admin.register(Department)
+class DepartmentAdmin(TranslationAdmin):
+    fields = ('name', 'slug', 'description', 'contact_phone')
+    list_display = ['name', 'description', 'contact_phone']
+    prepopulated_fields = {'slug': ('name',)}

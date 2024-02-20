@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-13 10:59+0000\n"
+"POT-Creation-Date: 2024-02-20 04:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,52 +18,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: base_front/context_processors.py:6
+#: base_front/context_processors.py:10
 msgid "menu_events"
 msgstr "Events"
 
-#: base_front/context_processors.py:8
+#: base_front/context_processors.py:12
 msgid "menu_services"
 msgstr "Services"
 
-#: base_front/context_processors.py:10
-#: base_front/templates/base_front/laboratory/list.html:14
-msgid "menu_laboratory"
-msgstr "Expertise and analysis"
-
-#: base_front/context_processors.py:11
-msgid "menu_consulting"
-msgstr "Consulting"
-
-#: base_front/context_processors.py:14
+#: base_front/context_processors.py:15
 msgid "menu_projects"
 msgstr "Projects"
 
-#: base_front/context_processors.py:15
+#: base_front/context_processors.py:16
 msgid "menu_partners"
 msgstr "Partners"
 
-#: base_front/context_processors.py:16
+#: base_front/context_processors.py:17
 msgid "menu_store"
 msgstr "Store"
 
-#: base_front/context_processors.py:18
+#: base_front/context_processors.py:19
 msgid "menu_farmer_training"
 msgstr "Farmer training"
 
-#: base_front/models.py:196
+#: base_front/models.py:57
+msgid "menu_consulting"
+msgstr "Consulting"
+
+#: base_front/models.py:243
 msgid "product_name_label"
 msgstr "Name"
 
-#: base_front/models.py:200
+#: base_front/models.py:247
 msgid "product_variety_label"
 msgstr "Variety"
 
-#: base_front/models.py:204
+#: base_front/models.py:251
 msgid "product_reproduction_label"
 msgstr "Reproduction"
 
-#: base_front/models.py:208
+#: base_front/models.py:255
 msgid "product_price_label"
 msgstr "Price"
 
@@ -269,8 +264,16 @@ msgid "service_table_name"
 msgstr ""
 
 #: base_front/templates/base_front/laboratory/_list_tab.html:24
+msgid "service_table_descr"
+msgstr ""
+
+#: base_front/templates/base_front/laboratory/_list_tab.html:25
 msgid "service_table_price"
 msgstr ""
+
+#: base_front/templates/base_front/laboratory/list.html:14
+msgid "menu_laboratory"
+msgstr "Expertise and analysis"
 
 #: base_front/templates/base_front/laboratory/list.html:16
 msgid "laboratory_p"
@@ -311,7 +314,7 @@ msgstr "Store"
 msgid "store_p"
 msgstr "In our store you will find a variety of agricultural products."
 
-#: base_front/views.py:183
+#: base_front/views.py:185
 msgid "training_success_submitted"
 msgstr ""
 

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf import settings
 from ckeditor_uploader import views as ckeditor_views
 
@@ -30,5 +30,11 @@ urlpatterns = [
     # path('ckeditor/browse/', ckeditor_views.browse, name='ckeditor_browse'),
 ]
 
-if settings.DEBUG:
+if bool(settings.DEBUG):
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        re_path(r'^rosetta/', include('rosetta.urls'))
+    ]

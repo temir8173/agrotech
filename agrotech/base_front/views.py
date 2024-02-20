@@ -10,11 +10,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import translation
 from django.utils.translation import gettext as _
 
-
 from agrotech import settings
 from base_front.forms import FarmerTrainingForm
-from base_front.models import Topic, News, ServiceCategories, Services, Partners, Consulting, CourseCategories, Courses, \
-    ProductCategories, ProductSeller, Products
+from base_front.models import Topic, News, ServiceCategories, Services, Partners, Consulting, CourseCategories, \
+    Courses, ProductCategories, ProductSeller, Products, Department
 from base_front.utils import track_visitor
 
 
@@ -137,20 +136,22 @@ def project(request, project_id):
     return render(request, "base_front/projects/view.html", context)
 
 
-def laboratory(request):
+def service(request, slug):
     locale = translation.get_language()
-    service_categories = ServiceCategories.objects \
-        .annotate(
-        name=models.F('name_' + locale),
-        description=models.F('description_' + locale)
-    ).values('id', 'name', 'description').all().filter()
-    services_obj = Services.objects.order_by("id").all().filter(locale=locale,)
+    try:
+        department = Department.objects.get(slug=slug)
+    except models.ObjectDoesNotExist:
+        raise Http404()
+
+    service_categories = ServiceCategories.get_service_categories(locale, department.id)
+    services_obj = Services.objects.order_by("id").all().filter(locale=locale, )
     services_by_category = {category_id: list(items) for category_id, items in
-                           groupby(services_obj, key=lambda x: x.category_id)}
+                            groupby(services_obj, key=lambda x: x.category_id)}
     categories = {item['id']: item for item in service_categories}
 
     context = {
         'categories': categories,
+        'department': department,
         'services_by_category': services_by_category,
     }
     return render(request, "base_front/laboratory/list.html", context)
@@ -237,7 +238,7 @@ def store(request):
     ).values('id', 'name').all().filter()
     categories = {item['id']: item for item in product_categories}
 
-    products = Products.objects.order_by("id").all().filter(locale=locale,)
+    products = Products.objects.order_by("id").all().filter(locale=locale, )
     products_by_seller = {
         seller_id: list(items) for seller_id, items in groupby(products, key=lambda x: x.seller_id)
     }
@@ -257,7 +258,7 @@ def store(request):
 
 def courses(request, category_id):
     locale = translation.get_language()
-    courses_objects = Courses.objects.order_by("id").all().filter(category_id=category_id, locale=locale,)
+    courses_objects = Courses.objects.order_by("id").all().filter(category_id=category_id, locale=locale, )
 
     category_name = get_object_or_404(
         CourseCategories.objects.filter(id=category_id).annotate(

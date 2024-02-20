@@ -9,12 +9,14 @@ urlpatterns = [
     path('event/<int:event_id>/', views.event_view, name='event_view'),
     path('projects', views.projects),
     path('project/<int:project_id>/', views.project, name='project_view'),
-    path('laboratory', views.laboratory),
     path('partners', views.partners),
     path('partner/<int:partner_id>/', views.partner, name='partner_view'),
     path('farmer_training', views.farmer_training),
-    path('consulting', views.consulting),
-    path('consulting/<str:slug>/', views.consulting_view, name='consulting_view'),
+
+    path('service/consulting/', views.consulting),
+    path('service/consulting/<str:slug>/', views.consulting_view, name='consulting_view'),
+    path('service/<str:slug>/', views.service),
+
     path('store', views.store),
     path('courses/<int:category_id>/', views.courses, name='courses'),
 

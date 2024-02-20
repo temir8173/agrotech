@@ -34,6 +34,7 @@ ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", default='').split(" ")
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rosetta',
     'base_front.apps.BaseFrontConfig',
     'ckeditor',
     'ckeditor_uploader',
@@ -153,6 +155,10 @@ LANGUAGES = [
     ('ru', 'Russian'),
     ('en', 'English'),
 ]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'kk'
+
+MODELTRANSLATION_FALLBACK_LANGUAGES = ('en', 'ru')
 
 
 # Static files (CSS, JavaScript, Images)

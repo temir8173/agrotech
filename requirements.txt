@@ -6,3 +6,6 @@ django-js-asset==2.0.0
 Pillow==9.5.0
 gunicorn==20.1.0
 django-cors-headers==4.2.0
+django-modeltranslation==0.18.11
+transliterate==1.10.2
+django-rosetta==0.10.0

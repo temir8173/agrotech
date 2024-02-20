@@ -258,7 +258,7 @@
 
                     if (submenu.is(':visible')) {
                         submenu.slideUp(450, 'easeInOutQuad');
-                        thisItemParent.removeClass('is-open-sub');
+							thisItemParent.removeClass('is-open-sub');
                     } else {
                         thisItemParent.addClass('is-open-sub');
 

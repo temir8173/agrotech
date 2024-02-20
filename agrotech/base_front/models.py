@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext as _
+from django.utils.text import slugify
+from transliterate import translit
 
 from agrotech import settings
 
@@ -44,6 +46,29 @@ class News(models.Model):
         verbose_name_plural = "News"
 
 
+class Department(models.Model):
+    name = models.CharField(max_length=255)
+    slug = models.CharField(max_length=255, default='', blank=True)
+    description = models.TextField(max_length=255, null=True, blank=True)
+    contact_phone = models.CharField(max_length=255, null=True, default='')
+
+    @classmethod
+    def departments_with_services(cls):
+        departments_with_services = {'/service/consulting': _('menu_consulting'),}
+        departments = cls.objects.filter(servicecategories__isnull=False).distinct()
+        for department in departments:
+            if department.slug and department.name:
+                departments_with_services['/service/' + department.slug] = _(department.name)
+
+        return departments_with_services
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return self.name
+
+
 class ServiceCategories(models.Model):
     name_kk = models.CharField(max_length=255)
     name_ru = models.CharField(max_length=255)
@@ -51,7 +76,29 @@ class ServiceCategories(models.Model):
     description_kk = models.TextField(max_length=255, null=True, blank=True)
     description_ru = models.TextField(max_length=255, null=True, blank=True)
     description_en = models.TextField(max_length=255, null=True, blank=True)
-    contact_phone = models.CharField(max_length=255, null=True, default='')
+    contact_phone = models.CharField(max_length=255, blank=True, null=True, default='')
+    department = models.ForeignKey(Department, on_delete=models.CASCADE, null=True, default=None)
+
+    @classmethod
+    def get_service_categories(cls, locale, department_id):
+        # Annotate and filter the queryset
+        service_categories = cls.objects \
+            .annotate(
+            name=models.Case(
+                models.When(**{'name_' + locale: ''}, then='name_en'),
+                default='name_' + locale,
+                output_field=models.CharField()
+            ),
+            description=models.Case(
+                models.When(**{'description_' + locale: ''}, then='description_en'),
+                default='description_' + locale,
+                output_field=models.CharField()
+            )
+        ) \
+            .values('id', 'name', 'description') \
+            .filter(department_id=department_id)
+
+        return service_categories
 
     def __repr__(self):
         return self.__str__()
