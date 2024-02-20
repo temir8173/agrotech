@@ -145,8 +145,10 @@ def service(request, slug):
 
     service_categories = ServiceCategories.get_service_categories(locale, department.id)
     services_obj = Services.objects.order_by("id").all().filter(locale=locale, )
-    services_by_category = {category_id: list(items) for category_id, items in
-                            groupby(services_obj, key=lambda x: x.category_id)}
+    services_by_category = {
+        category_id: list(items)
+        for category_id, items in groupby(services_obj, key=lambda x: x.category_id)
+    }
     categories = {item['id']: item for item in service_categories}
 
     context = {

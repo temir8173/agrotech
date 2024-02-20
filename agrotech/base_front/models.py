@@ -114,6 +114,7 @@ class Services(models.Model):
     description = models.TextField(null=True, blank=True)
     price = models.CharField(max_length=64)
     category = models.ForeignKey(ServiceCategories, on_delete=models.CASCADE, null=True, default=None)
+    contact_phone = models.CharField(max_length=255, blank=True, null=True, default='')
 
     def __repr__(self):
         return self.__str__()
