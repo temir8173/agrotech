@@ -109,7 +109,7 @@ class ServicesAdmin(BaseModelAdmin):
     verbose_name_plural = 'Service'
 
     form = ServicesForm
-    fields = ('base_id', 'name', 'locale', 'price', 'category', 'description')
+    fields = ('base_id', 'name', 'locale', 'price', 'category', 'description', 'contact_phone')
     list_display = ['name', 'locale', 'translate_links', 'price', 'category', 'description']
     list_filter = ('locale', )
     search_fields = ('name__startswith', 'description')
