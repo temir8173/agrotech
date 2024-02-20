@@ -49,7 +49,7 @@ class News(models.Model):
 class Department(models.Model):
     name = models.CharField(max_length=255)
     slug = models.CharField(max_length=255, default='', blank=True)
-    description = models.TextField(max_length=255, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     contact_phone = models.CharField(max_length=255, null=True, default='')
 
     @classmethod
@@ -73,9 +73,9 @@ class ServiceCategories(models.Model):
     name_kk = models.CharField(max_length=255)
     name_ru = models.CharField(max_length=255)
     name_en = models.CharField(max_length=255)
-    description_kk = models.TextField(max_length=255, null=True, blank=True)
-    description_ru = models.TextField(max_length=255, null=True, blank=True)
-    description_en = models.TextField(max_length=255, null=True, blank=True)
+    description_kk = models.TextField(null=True, blank=True)
+    description_ru = models.TextField(null=True, blank=True)
+    description_en = models.TextField(null=True, blank=True)
     contact_phone = models.CharField(max_length=255, blank=True, null=True, default='')
     department = models.ForeignKey(Department, on_delete=models.CASCADE, null=True, default=None)
 
@@ -111,7 +111,7 @@ class Services(models.Model):
     base_id = models.IntegerField(null=True, blank=True)
     name = models.CharField(max_length=255)
     locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
-    description = models.TextField(max_length=255, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     price = models.CharField(max_length=64)
     category = models.ForeignKey(ServiceCategories, on_delete=models.CASCADE, null=True, default=None)
 
