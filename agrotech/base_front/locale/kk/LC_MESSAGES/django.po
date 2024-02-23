@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-20 04:56+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2024-02-20 05:36+0000\n"
+"Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
 
 #: base_front/context_processors.py:10
 msgid "menu_events"
@@ -89,8 +90,8 @@ msgstr ""
 msgid "about_p_3"
 msgstr ""
 "AgriTech Hub – бұл жаңа технологиялар мен АКТ саласындағы білімнің "
-"сарапшылар тобының инвестициялық тәжірибесімен үйлесімі. Біздің міндетіміз - "
-"өсіру, өндіру және тарату сатысында, түпкі тұтынушыға дейін қолданылатын "
+"сарапшылар тобының инвестициялық тәжірибесімен үйлесімі. Біздің міндетіміз -"
+" өсіру, өндіру және тарату сатысында, түпкі тұтынушыға дейін қолданылатын "
 "инновацияларды қолдау. Үздік ғылыми орталықтармен, мекемелермен және "
 "серіктестермен ынтымақтасу агроазық-түлік саласына, демек тұтынушыға нақты "
 "пайда әкелетін тиімді инвестицияларға апаратын жол деп есептейміз."
@@ -258,13 +259,12 @@ msgstr "Соңғы жаңалықтар"
 
 #: base_front/templates/base_front/laboratory/_list_tab.html:23
 msgid "service_table_name"
-msgstr "Қызметтердің, өнімнің анықталған сипаттамалары (көрсеткіштері)."
+msgstr "Қызмет атауы"
 
 #: base_front/templates/base_front/laboratory/_list_tab.html:24
-#, fuzzy
 #| msgid "service_table_name"
 msgid "service_table_descr"
-msgstr "Қызметтердің, өнімнің анықталған сипаттамалары (көрсеткіштері)."
+msgstr "Сипаттамасы"
 
 #: base_front/templates/base_front/laboratory/_list_tab.html:25
 msgid "service_table_price"
@@ -281,7 +281,8 @@ msgstr ""
 "негізінде ұсыныстар мен ұсыныстар береді, сүттің сапасын бағалайды, олардың "
 "шығу тегін анықтау үшін жануарларға генетикалық сараптама жүргізеді, ДНҚ "
 "бойынша мал тұқымдарының деректер базасын жасайды, жануарлардың тұқымдарын "
-"анықтайды. жануарлар, құстар мен балықтар организмінің ауруларға төзімділігі."
+"анықтайды. жануарлар, құстар мен балықтар организмінің ауруларға "
+"төзімділігі."
 
 #: base_front/templates/base_front/partners/list.html:11
 msgid "agro_partners_h"
