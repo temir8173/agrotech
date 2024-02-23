@@ -111,7 +111,7 @@ class ServicesAdmin(BaseModelAdmin):
     form = ServicesForm
     fields = ('base_id', 'name', 'locale', 'price', 'category', 'description', 'contact_person', 'contact_phone')
     list_display = ['name', 'locale', 'translate_links', 'price', 'category', 'description']
-    list_filter = ('locale', )
+    list_filter = ('locale', 'category')
     search_fields = ('name__startswith', 'description')
 
     def translate_links(self, obj):
