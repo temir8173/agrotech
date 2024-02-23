@@ -109,12 +109,19 @@ class ServiceCategories(models.Model):
 
 class Services(models.Model):
     base_id = models.IntegerField(null=True, blank=True)
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=1000)
     locale = models.CharField(max_length=4, default='kk', choices=settings.LANGUAGES)
     description = models.TextField(null=True, blank=True)
-    price = models.CharField(max_length=64)
+    price = models.CharField(max_length=1000)
     category = models.ForeignKey(ServiceCategories, on_delete=models.CASCADE, null=True, default=None)
-    contact_phone = models.CharField(max_length=255, blank=True, null=True, default='')
+    contact_person = models.CharField(max_length=500, blank=True, null=True, default='')
+    contact_phone = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        default='',
+        help_text="Whatsapp (77082345577)"
+    )
 
     def __repr__(self):
         return self.__str__()

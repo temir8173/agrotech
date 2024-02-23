@@ -23,6 +23,7 @@
             <th style="text-align: center; vertical-align: middle;" scope="col">{% trans "service_table_name" %}</th>
             <th style="text-align: center; vertical-align: middle;" scope="col">{% trans "service_table_descr" %}</th>
             <th style="text-align: center; vertical-align: middle;" width="20%" scope="col">{% trans "service_table_price" %}</th>
+            <th style="text-align: center; vertical-align: middle;" width="20%" scope="col">{% trans "service_table_contacts" %}</th>
             <th style="text-align: center; vertical-align: middle;" scope="col"></th>
           </tr>
         </thead>
@@ -34,6 +35,7 @@
                   <td style="vertical-align: middle">{{ service.name }}</td>
                   <td style="vertical-align: middle">{{ service.description }}</td>
                   <td style="text-align: center; vertical-align: middle;">{{ service.price }}</td>
+                  <td style="text-align: center; vertical-align: middle;">{{ service.contact_person }}</td>
                   <td style="text-align: center; vertical-align: middle;">
                     <a target="_blank"
                        href="https://api.whatsapp.com/send?phone={% if service and service.contact_phone %}{{ service.contact_phone }}{% else %}{{ category.contact_phone|default:'77079120339' }}{% endif %}&text={{ service.name }}">

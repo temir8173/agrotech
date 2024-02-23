@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-20 04:56+0000\n"
-"PO-Revision-Date: 2024-02-20 05:36+0000\n"
+"POT-Creation-Date: 2024-02-23 10:04+0000\n"
+"PO-Revision-Date: 2024-02-23 10:05+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -47,19 +47,19 @@ msgstr "Фермерлерді оқыту"
 msgid "menu_consulting"
 msgstr "Консалтинг"
 
-#: base_front/models.py:243
+#: base_front/models.py:251
 msgid "product_name_label"
 msgstr "Атауы"
 
-#: base_front/models.py:247
+#: base_front/models.py:255
 msgid "product_variety_label"
 msgstr "Сұрып"
 
-#: base_front/models.py:251
+#: base_front/models.py:259
 msgid "product_reproduction_label"
 msgstr "Репродукция"
 
-#: base_front/models.py:255
+#: base_front/models.py:263
 msgid "product_price_label"
 msgstr "Бағасы"
 
@@ -150,7 +150,6 @@ msgstr "Биоэнергетика"
 #: base_front/templates/base_front/events/list.html:38
 #: base_front/templates/base_front/index.html:76
 #: base_front/templates/base_front/projects/list.html:32
-#: base_front/templates/base_front/projects/list.html:45
 msgid "last_events_more_btn"
 msgstr "Толығырақ"
 
@@ -262,7 +261,6 @@ msgid "service_table_name"
 msgstr "Қызмет атауы"
 
 #: base_front/templates/base_front/laboratory/_list_tab.html:24
-#| msgid "service_table_name"
 msgid "service_table_descr"
 msgstr "Сипаттамасы"
 
@@ -270,19 +268,10 @@ msgstr "Сипаттамасы"
 msgid "service_table_price"
 msgstr "1 үлгінің құны, теңге"
 
-#: base_front/templates/base_front/laboratory/list.html:14
-msgid "menu_laboratory"
-msgstr "Сараптама және талдау"
-
-#: base_front/templates/base_front/laboratory/list.html:16
-msgid "laboratory_p"
-msgstr ""
-"Зертханалар суға, топыраққа, ауаға, дәнге, жемге талдау жүргізеді, соның "
-"негізінде ұсыныстар мен ұсыныстар береді, сүттің сапасын бағалайды, олардың "
-"шығу тегін анықтау үшін жануарларға генетикалық сараптама жүргізеді, ДНҚ "
-"бойынша мал тұқымдарының деректер базасын жасайды, жануарлардың тұқымдарын "
-"анықтайды. жануарлар, құстар мен балықтар организмінің ауруларға "
-"төзімділігі."
+#: base_front/templates/base_front/laboratory/_list_tab.html:26
+#| msgid "service_table_name"
+msgid "service_table_contacts"
+msgstr "Байланыс"
 
 #: base_front/templates/base_front/partners/list.html:11
 msgid "agro_partners_h"
@@ -312,9 +301,21 @@ msgstr "Магазин"
 msgid "store_p"
 msgstr "Біздің дүкеннен түрлі ауылшаруашылық өнімдерін таба аласыз."
 
-#: base_front/views.py:185
+#: base_front/views.py:186
 msgid "training_success_submitted"
 msgstr "Сіздің өтінішіңіз жіберілді"
+
+#~ msgid "menu_laboratory"
+#~ msgstr "Сараптама және талдау"
+
+#~ msgid "laboratory_p"
+#~ msgstr ""
+#~ "Зертханалар суға, топыраққа, ауаға, дәнге, жемге талдау жүргізеді, соның "
+#~ "негізінде ұсыныстар мен ұсыныстар береді, сүттің сапасын бағалайды, олардың "
+#~ "шығу тегін анықтау үшін жануарларға генетикалық сараптама жүргізеді, ДНҚ "
+#~ "бойынша мал тұқымдарының деректер базасын жасайды, жануарлардың тұқымдарын "
+#~ "анықтайды. жануарлар, құстар мен балықтар организмінің ауруларға "
+#~ "төзімділігі."
 
 #~ msgid "seller_contact"
 #~ msgstr "Байланыс"
